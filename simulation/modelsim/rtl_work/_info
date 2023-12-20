@@ -1,0 +1,446 @@
+m255
+K3
+13
+cModel Technology
+Z0 dI:\PCO_complex_teacher2023new\simulation\modelsim
+valu
+Z1 ImF1C2PA381QDYRU^kX54c1
+Z2 V:Xg=:=O4d3e<?dUP;J6]c0
+Z3 dI:\PCO_complex_teacher2023new\simulation\modelsim
+Z4 w1698587040
+Z5 8I:/PCO_complex_teacher2023new/rtl/alu.v
+Z6 FI:/PCO_complex_teacher2023new/rtl/alu.v
+L0 2
+Z7 OV;L;10.1e;51
+r1
+31
+Z8 o-vlog01compat -work work -O0
+Z9 !s92 -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl -O0
+Z10 !s100 hI:>McznmM?nl?^al?TA40
+Z11 !s108 1699855058.587000
+Z12 !s107 I:/PCO_complex_teacher2023new/rtl/alu.v|
+Z13 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/alu.v|
+!i10b 1
+!s85 0
+!s101 -O0
+var
+Z14 Id`F>Zh:_T?I^1:VK?]G`S1
+Z15 V9o44f1eRz@O7`49^5hNCC2
+R3
+R4
+Z16 8I:/PCO_complex_teacher2023new/rtl/ar.v
+Z17 FI:/PCO_complex_teacher2023new/rtl/ar.v
+L0 2
+R7
+r1
+31
+R8
+R9
+Z18 !s100 GJlZ9K[91@]]F>N^kLk;B3
+Z19 !s108 1699855058.293000
+Z20 !s107 I:/PCO_complex_teacher2023new/rtl/ar.v|
+Z21 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/ar.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vclk_div
+Z22 IcejV>fo2eX9T;[`o<4bf_3
+Z23 VBL^JGUH?:P=jZGFZ1=d1L0
+R3
+Z24 w1698587042
+Z25 8I:/PCO_complex_teacher2023new/rtl/clk_div.v
+Z26 FI:/PCO_complex_teacher2023new/rtl/clk_div.v
+L0 5
+R7
+r1
+31
+R8
+R9
+Z27 !s100 7lzROR?@CEg8<=B:L77411
+Z28 !s108 1699855059.091000
+Z29 !s107 I:/PCO_complex_teacher2023new/rtl/clk_div.v|
+Z30 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/clk_div.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vcontrol
+Z31 IkgoKHi>JnnU9cDc3Acd6O2
+Z32 V``c4cS?9djDMam8JCZcSD2
+R3
+R24
+Z33 8I:/PCO_complex_teacher2023new/rtl/control.v
+Z34 FI:/PCO_complex_teacher2023new/rtl/control.v
+L0 5
+R7
+r1
+31
+R8
+R9
+Z35 !s100 B:cn?HIF;:ZXWSYlEejRi1
+Z36 !s108 1699855057.989000
+Z37 !s107 I:/PCO_complex_teacher2023new/rtl/control.v|
+Z38 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/control.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vcpu
+Z39 IbfhVn^cSk83374e3=CIK40
+Z40 VJOd86a<k`:21mGVDoMFmE0
+R3
+R24
+Z41 8I:/PCO_complex_teacher2023new/rtl/cpu.v
+Z42 FI:/PCO_complex_teacher2023new/rtl/cpu.v
+L0 4
+R7
+r1
+31
+R8
+R9
+Z43 !s100 zT4?e;cO3dFI`f=BaW<RU3
+Z44 !s108 1699855057.772000
+Z45 !s107 I:/PCO_complex_teacher2023new/rtl/cpu.v|
+Z46 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/cpu.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vCPU_Controller
+Z47 IiTH`SJP:EX```PJo84ALZ3
+Z48 VgJP;oog[KFk?ZRZKj5F3P2
+R3
+Z49 w1698587044
+Z50 8I:/PCO_complex_teacher2023new/rtl/CPU_Controller.v
+Z51 FI:/PCO_complex_teacher2023new/rtl/CPU_Controller.v
+L0 4
+R7
+r1
+31
+R8
+R9
+Z52 n@c@p@u_@controller
+Z53 !s100 Uk^h0NDzm]MQh;6JlL;LE2
+Z54 !s108 1699855059.376000
+Z55 !s107 I:/PCO_complex_teacher2023new/rtl/CPU_Controller.v|
+Z56 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/CPU_Controller.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vdr
+Z57 IM?=UTU2I`I>:Tk^lD35UP1
+Z58 VCVY5c:DI4WF`C5FNFT<UO2
+R3
+R49
+Z59 8I:/PCO_complex_teacher2023new/rtl/dr.v
+Z60 FI:/PCO_complex_teacher2023new/rtl/dr.v
+L0 2
+R7
+r1
+31
+R8
+R9
+Z61 !s100 dGf2O6MJ7G=`PS3Se[=Mc0
+Z62 !s108 1699855057.550000
+Z63 !s107 I:/PCO_complex_teacher2023new/rtl/dr.v|
+Z64 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/dr.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vir
+Z65 I2nI8=L:9B<i[4>0[lmn7>3
+Z66 VT6Ro5YGOz[EPI]]@b2oOb3
+R3
+R49
+Z67 8I:/PCO_complex_teacher2023new/rtl/ir.v
+Z68 FI:/PCO_complex_teacher2023new/rtl/ir.v
+L0 3
+R7
+r1
+31
+R8
+R9
+Z69 !s100 fYKKIlJ8Vn[:iibg_`1F82
+Z70 !s108 1699855057.323000
+Z71 !s107 I:/PCO_complex_teacher2023new/rtl/ir.v|
+Z72 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/ir.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vlight_show
+Z73 I3:Kb9jU4b=aTkYTh>2_R@0
+Z74 V8k?LdHL4i^CfL`?^aWTMJ0
+R3
+Z75 w1699342860
+Z76 8I:/PCO_complex_teacher2023new/rtl/light_show.v
+Z77 FI:/PCO_complex_teacher2023new/rtl/light_show.v
+Z78 L0 416
+R7
+r1
+31
+R8
+R9
+Z79 !s100 H;g@z9gch92Wh3fgbfT`R0
+Z80 !s108 1699855058.822000
+Z81 !s107 I:/PCO_complex_teacher2023new/rtl/light_show.v|
+Z82 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/light_show.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vpc
+Z83 I]5mc7V[n7f7j[@[L<<]gD3
+Z84 VmRJ@8@k8LF4@AeEETcN4T3
+R3
+R49
+Z85 8I:/PCO_complex_teacher2023new/rtl/pc.v
+Z86 FI:/PCO_complex_teacher2023new/rtl/pc.v
+L0 2
+R7
+r1
+31
+R8
+R9
+Z87 !s100 mWP3YS;N84db8MOa<`NFz3
+Z88 !s108 1699855057.073000
+Z89 !s107 I:/PCO_complex_teacher2023new/rtl/pc.v|
+Z90 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/pc.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vqtsj
+Z91 IUma7;?F0Tn`ikS[maW25d2
+Z92 VL__P<B;7Mo?8K9;LcUd[61
+R3
+Z93 w1698587046
+Z94 8I:/PCO_complex_teacher2023new/rtl/qtsj.v
+Z95 FI:/PCO_complex_teacher2023new/rtl/qtsj.v
+L0 2
+R7
+r1
+31
+R8
+R9
+Z96 !s100 9`;]Hmd<ae;?ARV?C@Dni0
+Z97 !s108 1699855059.645000
+Z98 !s107 I:/PCO_complex_teacher2023new/rtl/qtsj.v|
+Z99 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/qtsj.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vr0
+Z100 IfNo<<_T@`Q59j2ZAgFEmb0
+Z101 VZI5G29LJ=aBdJU9jbFQUZ2
+R3
+R93
+Z102 8I:/PCO_complex_teacher2023new/rtl/r0.v
+Z103 FI:/PCO_complex_teacher2023new/rtl/r0.v
+L0 2
+R7
+r1
+31
+R8
+Z104 !s100 ]1fzJPX;I_`914geaZ2>O3
+Z105 !s108 1699855055.591000
+Z106 !s107 I:/PCO_complex_teacher2023new/rtl/r0.v|
+Z107 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/r0.v|
+R9
+!i10b 1
+!s85 0
+!s101 -O0
+vr1
+Z108 IA]iFh0j>T?kMjYgk`lf><2
+Z109 VQQl<Ra=cSBSk5m2F^]=le1
+R3
+R93
+Z110 8I:/PCO_complex_teacher2023new/rtl/r1.v
+Z111 FI:/PCO_complex_teacher2023new/rtl/r1.v
+L0 2
+R7
+r1
+31
+R8
+R9
+Z112 !s100 n[LL2EQi]iZ0?7l3h>o_83
+Z113 !s108 1699855055.790000
+Z114 !s107 I:/PCO_complex_teacher2023new/rtl/r1.v|
+Z115 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/r1.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vr2
+Z116 I1fK5_L6S1O0nzLTJJP0aN1
+Z117 V3Klo>8zmDnMJWabI`Va0z2
+R3
+R93
+Z118 8I:/PCO_complex_teacher2023new/rtl/r2.v
+Z119 FI:/PCO_complex_teacher2023new/rtl/r2.v
+L0 2
+R7
+r1
+31
+R8
+R9
+Z120 !s100 [iddf7Nj9o9XGC;lCglZF3
+Z121 !s108 1699855060.115000
+Z122 !s107 I:/PCO_complex_teacher2023new/rtl/r2.v|
+Z123 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/r2.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vr3
+Z124 IOUlb@190[OnXi9QFRTQmc0
+Z125 V_KhGA;S=ajcSj:bIL9<mM2
+R3
+R93
+Z126 8I:/PCO_complex_teacher2023new/rtl/r3.v
+Z127 FI:/PCO_complex_teacher2023new/rtl/r3.v
+L0 2
+R7
+r1
+31
+R8
+R9
+Z128 !s100 <:L[<>R2znffVWmDaTCW92
+Z129 !s108 1699855060.395000
+Z130 !s107 I:/PCO_complex_teacher2023new/rtl/r3.v|
+Z131 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/r3.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vram
+Z132 IU[b90f9WRbGQZfWDeT@@63
+Z133 VJBb5h44ne>;`:Z8@MUeVS3
+R3
+R93
+Z134 8I:/PCO_complex_teacher2023new/rtl/ram.v
+Z135 FI:/PCO_complex_teacher2023new/rtl/ram.v
+L0 2
+R7
+r1
+31
+R8
+R9
+Z136 !s100 AkdaF;Hijh=aUlN`DFKQd1
+Z137 !s108 1699855056.004000
+Z138 !s107 I:/PCO_complex_teacher2023new/rtl/ram.v|
+Z139 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/ram.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vtop
+Z140 IHjJ=A`o5DlYV9m[<KSz;R2
+Z141 V3i052mjP`>I1M>foQ1a7[3
+R3
+Z142 w1699343064
+Z143 8I:/PCO_complex_teacher2023new/rtl/top.v
+Z144 FI:/PCO_complex_teacher2023new/rtl/top.v
+L0 4
+R7
+r1
+31
+R8
+R9
+Z145 !s100 2I:KhTAj6ia_g9O1mEP_B1
+Z146 !s108 1699855056.722000
+Z147 !s107 I:/PCO_complex_teacher2023new/rtl/top.v|
+Z148 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/top.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vtop_vlg_tst
+!i10b 1
+!s100 4JRG_::4kNjjPL1^_A]i@0
+IgBKcEeNKe54cS?ZIjUSc=2
+VWH`X8iAJ@;Z6_Z>8HHbjI2
+R3
+w1698587438
+8I:/PCO_complex_teacher2023new/simulation/modelsim/top.vt
+FI:/PCO_complex_teacher2023new/simulation/modelsim/top.vt
+L0 29
+R7
+r1
+!s85 0
+31
+!s108 1699855060.903000
+!s107 I:/PCO_complex_teacher2023new/simulation/modelsim/top.vt|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/simulation/modelsim|I:/PCO_complex_teacher2023new/simulation/modelsim/top.vt|
+!s101 -O0
+R8
+!s92 -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/simulation/modelsim -O0
+vtr
+Z149 I9d>X[S0WS8<:8B=`a<X<f1
+Z150 Vg<II86?Lk9I?]mBFLT6hc1
+R3
+Z151 w1698587048
+Z152 8I:/PCO_complex_teacher2023new/rtl/tr.v
+Z153 FI:/PCO_complex_teacher2023new/rtl/tr.v
+L0 2
+R7
+r1
+31
+R8
+R9
+Z154 !s100 8ImYkVn367_DUz9endYk03
+Z155 !s108 1699855056.523000
+Z156 !s107 I:/PCO_complex_teacher2023new/rtl/tr.v|
+Z157 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/tr.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vx
+Z158 Ijgl`96iVId6;<<X55hzR?3
+Z159 VACmz^Xboj2zje:I=[[lSX1
+R3
+R151
+Z160 8I:/PCO_complex_teacher2023new/rtl/x.v
+Z161 FI:/PCO_complex_teacher2023new/rtl/x.v
+L0 2
+R7
+r1
+31
+R8
+R9
+Z162 !s100 kTmU5bnFSNzEU?jJbM86Z2
+Z163 !s108 1699855059.851000
+Z164 !s107 I:/PCO_complex_teacher2023new/rtl/x.v|
+Z165 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/x.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vy
+Z166 IlWOZa0@6^j0jaknlHLM_h0
+Z167 VK50RjLfMTK7=H^Pk[<KXQ2
+R3
+R151
+Z168 8I:/PCO_complex_teacher2023new/rtl/y.v
+Z169 FI:/PCO_complex_teacher2023new/rtl/y.v
+L0 2
+R7
+r1
+31
+R8
+R9
+!i10b 1
+Z170 !s100 4PjC2ga3fiRh`jTWAjS@a2
+!s85 0
+Z171 !s108 1699855060.629000
+Z172 !s107 I:/PCO_complex_teacher2023new/rtl/y.v|
+Z173 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/y.v|
+!s101 -O0
+vz
+Z174 IL7^3Q[HB>I@9FEFim]d4L1
+Z175 VWd`6;6g:3kR^0J9lfhOKH2
+R3
+R151
+Z176 8I:/PCO_complex_teacher2023new/rtl/z.v
+Z177 FI:/PCO_complex_teacher2023new/rtl/z.v
+L0 2
+R7
+r1
+31
+R8
+R9
+Z178 !s100 063l87PBc;OjUTP60N1U_0
+Z179 !s108 1699855056.296000
+Z180 !s107 I:/PCO_complex_teacher2023new/rtl/z.v|
+Z181 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+I:/PCO_complex_teacher2023new/rtl|I:/PCO_complex_teacher2023new/rtl/z.v|
+!i10b 1
+!s85 0
+!s101 -O0
