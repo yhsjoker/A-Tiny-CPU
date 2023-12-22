@@ -12,48 +12,64 @@
 */
 //省略号中是自行设计的控制信号，需要自行补充，没用到z的话去掉z
 
-module control(din,clk,rst,z,cpustate, clr); 
-input [7:0]din;
-input clk;
-input rst,z;
-input [1:0] cpustate;
+module control(
+	input[7:0]	din,
+	input		clk, rst, z,
+	input[1:0]	cpustate,
+	output		aluload, arload, arinc,
+	output		drload, drhbus, drlbus,
+	output		irload,
+	output		pcload, pcinc, pcbus,
+	output		r0load, r0bus,
+	output		r1load, r1bus,
+	output		r2load, r2bus,
+	output		r3load, r3bus,
+	output		trload, trbus,
+	output		xload,
+	output		yload, ybus,
+	output		zload,	
+	input		clr
+	); 
 //补充输出端口说明
 //parameter's define
 
 wire reset;
 //在下方加上自行定义的状态
-wire fetch1,fetch2,fetch3,nop1;
+wire fetch1, fetch2, fetch3, nop1;
 		
 //加上自行设计的指令，这里是译码器的输出，所以nop指令经译码器输出后为inop。
 //类似地，add指令指令经译码器输出后为iadd；inac指令经译码器输出后为iinac，......
-reg inop;
+reg inop, iadd, isub, iand, 
+	ior, iinc, idec, inot, 
+	ishl, imvr, imvrd, ijmp, 
+	ijmpz, ijpnz, ilad, isto;
 
 //时钟节拍，8个为一个指令周期，t0-t2分别对应fetch1-fetch3，t3-t7分别对应各指令的执行周期，当然不是所有指令都需要5个节拍的。例如add指令只需要2个节拍：t3和t4
-reg t0,t1,t2,t3,t4,t5,t6,t7; //时钟节拍，8个为一个周期
+reg t0, t1, t2, t3, t4, t5, t6, t7; //时钟节拍，8个为一个周期
 
 // 内部信号：clr清零，inc自增
 wire clr;
 wire inc;
-assign reset = rst&(cpustate == 2'b11);
+assign reset = rst & (cpustate == 2'b11);
 // assign signals for the cunter
 
 //clr信号是每条指令执行完毕后必做的清零，下面clr赋值语句要修改，需要“或”各指令的最后一个周期
-assign clr=nop1;
-assign inc=~clr;
+assign clr = nop1;
+assign inc = ~clr;
 
 //generate the control signal using state information
 //...
 //取公过程
-assign fetch1=t0;
-assign fetch2=t1;
-assign fetch3=t2;
+assign fetch1 = t0;
+assign fetch2 = t1;
+assign fetch3 = t2;
 //什么都不做的译码
-assign nop1=inop&&t3;//inop表示nop指令，nop1是nop指令的执行周期的第一个状态也是最后一个状态，因为只需要1个节拍t3完成
+assign nop1 = inop && t3;//inop表示nop指令，nop1是nop指令的执行周期的第一个状态也是最后一个状态，因为只需要1个节拍t3完成
 
 //以下写出各条指令状态的表达式
-assign add1=iadd&&t3;
-assign add2=iadd&&t4;
-assign add3=iadd&&t5;
+assign add1 = iadd && t3;
+assign add2 = iadd && t4;
+assign add3 = iadd && t5;
 
 //以下给出了pcbus的逻辑表达式，写出其他控制信号的逻辑表达式
 // assign pcbus = fetch1 || fetch3;
@@ -90,44 +106,319 @@ always@(posedge clk or negedge reset)
 begin
 if(!reset)
 	begin//各指令清零，以下已为nop指令清零，请补充其他指令，为其他指令清零
-		inop<=0;
-		
+		inop <= 0;
+		iadd <= 0; 
+		isub <= 0;
+		iand <= 0; 
+		ior <= 0;
+		iinc <= 0;
+		idec <= 0;
+		inot <= 0; 
+		ishl <= 0;
+		imvr <= 0;
+		imvrd <= 0;
+		ijmp <= 0; 
+		ijmpz <= 0;
+		ijpnz <= 0;
+		ilad <= 0;
+		isto <= 0;
 	end
 else 
 	begin
 		case(din[7:4])	//译码处理过程
 		4'd0:  begin		//op为0000，是nop指令，因此这里inop的值是1，而其他指令应该清零，请补充为其他指令清零的语句
-			inop<=1;
-			
+			inop <= 1;
+			iadd <= 0; 
+			isub <= 0;
+			iand <= 0; 
+			ior <= 0;
+			iinc <= 0;
+			idec <= 0;
+			inot <= 0; 
+			ishl <= 0;
+			imvr <= 0;
+			imvrd <= 0;
+			ijmp <= 0; 
+			ijmpz <= 0;
+			ijpnz <= 0;
+			ilad <= 0;
+			isto <= 0;
 			end
 		4'd1:  begin
 				//op为0001，应该是add指令，因此iadd指令为1，其他指令都应该是0。
 				//后续各分支类似，只有一条指令为1，其他指令为0，以下分支都给出nop指令的赋值，需要补充其他指令
-			inop<=0;
+			inop <= 0;
+			iadd <= 1; 
+			isub <= 0;
+			iand <= 0; 
+			ior <= 0;
+			iinc <= 0;
+			idec <= 0;
+			inot <= 0; 
+			ishl <= 0;
+			imvr <= 0;
+			imvrd <= 0;
+			ijmp <= 0; 
+			ijmpz <= 0;
+			ijpnz <= 0;
+			ilad <= 0;
+			isto <= 0;
 				
-			
 			end
 		4'd2:  begin
-			inop<=0;
+			inop <= 0;
+			iadd <= 0; 
+			isub <= 1;
+			iand <= 0; 
+			ior <= 0;
+			iinc <= 0;
+			idec <= 0;
+			inot <= 0; 
+			ishl <= 0;
+			imvr <= 0;
+			imvrd <= 0;
+			ijmp <= 0; 
+			ijmpz <= 0;
+			ijpnz <= 0;
+			ilad <= 0;
+			isto <= 0;
 				
 			end
 		4'd3:  begin
-			inop<=0;
+			inop <= 0;
+			iadd <= 0; 
+			isub <= 0;
+			iand <= 1; 
+			ior <= 0;
+			iinc <= 0;
+			idec <= 0;
+			inot <= 0; 
+			ishl <= 0;
+			imvr <= 0;
+			imvrd <= 0;
+			ijmp <= 0; 
+			ijmpz <= 0;
+			ijpnz <= 0;
+			ilad <= 0;
+			isto <= 0;
 				
 			end
 		4'd4:  begin
-			inop<=0;	
+			inop <= 0;
+			iadd <= 0; 
+			isub <= 0;
+			iand <= 0; 
+			ior <= 1;
+			iinc <= 0;
+			idec <= 0;
+			inot <= 0; 
+			ishl <= 0;
+			imvr <= 0;
+			imvrd <= 0;
+			ijmp <= 0; 
+			ijmpz <= 0;
+			ijpnz <= 0;
+			ilad <= 0;
+			isto <= 0;
 			end
 		4'd5:  begin
-			inop<=0;	
+			inop <= 0;
+			iadd <= 0; 
+			isub <= 0;
+			iand <= 0; 
+			ior <= 0;
+			iinc <= 1;
+			idec <= 0;
+			inot <= 0; 
+			ishl <= 0;
+			imvr <= 0;
+			imvrd <= 0;
+			ijmp <= 0; 
+			ijmpz <= 0;
+			ijpnz <= 0;
+			ilad <= 0;
+			isto <= 0;	
 			end
 		4'd6:	begin
-			inop<=0;	
+			inop <= 0;
+			iadd <= 0; 
+			isub <= 0;
+			iand <= 0; 
+			ior <= 0;
+			iinc <= 0;
+			idec <= 1;
+			inot <= 0; 
+			ishl <= 0;
+			imvr <= 0;
+			imvrd <= 0;
+			ijmp <= 0; 
+			ijmpz <= 0;
+			ijpnz <= 0;
+			ilad <= 0;
+			isto <= 0;	
 			end
 		4'd7:	begin
-			inop<=0;	
+			inop <= 0;
+			iadd <= 0; 
+			isub <= 0;
+			iand <= 0; 
+			ior <= 0;
+			iinc <= 0;
+			idec <= 0;
+			inot <= 1; 
+			ishl <= 0;
+			imvr <= 0;
+			imvrd <= 0;
+			ijmp <= 0; 
+			ijmpz <= 0;
+			ijpnz <= 0;
+			ilad <= 0;
+			isto <= 0;	
 			end
-			//如果还有分支，可以继续写，如果没有分支了，写上defuault语句	
+		4'd8:	begin
+			inop <= 0;
+			iadd <= 0; 
+			isub <= 0;
+			iand <= 0; 
+			ior <= 0;
+			iinc <= 0;
+			idec <= 0;
+			inot <= 0; 
+			ishl <= 1;
+			imvr <= 0;
+			imvrd <= 0;
+			ijmp <= 0; 
+			ijmpz <= 0;
+			ijpnz <= 0;
+			ilad <= 0;
+			isto <= 0;	
+			end
+		4'd9:	begin
+			inop <= 0;
+			iadd <= 0; 
+			isub <= 0;
+			iand <= 0; 
+			ior <= 0;
+			iinc <= 0;
+			idec <= 0;
+			inot <= 0; 
+			ishl <= 0;
+			imvr <= 1;
+			imvrd <= 0;
+			ijmp <= 0; 
+			ijmpz <= 0;
+			ijpnz <= 0;
+			ilad <= 0;
+			isto <= 0;	
+			end
+		4'd10:	begin
+			inop <= 0;
+			iadd <= 0; 
+			isub <= 0;
+			iand <= 0; 
+			ior <= 0;
+			iinc <= 0;
+			idec <= 0;
+			inot <= 0; 
+			ishl <= 0;
+			imvr <= 0;
+			imvrd <= 1;
+			ijmp <= 0; 
+			ijmpz <= 0;
+			ijpnz <= 0;
+			ilad <= 0;
+			isto <= 0;	
+			end
+		4'd11:	begin
+			inop <= 0;
+			iadd <= 0; 
+			isub <= 0;
+			iand <= 0; 
+			ior <= 0;
+			iinc <= 0;
+			idec <= 0;
+			inot <= 0; 
+			ishl <= 0;
+			imvr <= 0;
+			imvrd <= 0;
+			ijmp <= 1; 
+			ijmpz <= 0;
+			ijpnz <= 0;
+			ilad <= 0;
+			isto <= 0;	
+			end
+		4'd12:	begin
+			inop <= 0;
+			iadd <= 0; 
+			isub <= 0;
+			iand <= 0; 
+			ior <= 0;
+			iinc <= 0;
+			idec <= 0;
+			inot <= 0; 
+			ishl <= 0;
+			imvr <= 0;
+			imvrd <= 0;
+			ijmp <= 0; 
+			ijmpz <= 1;
+			ijpnz <= 0;
+			ilad <= 0;
+			isto <= 0;	
+			end
+		4'd13:	begin
+			inop <= 0;
+			iadd <= 0; 
+			isub <= 0;
+			iand <= 0; 
+			ior <= 0;
+			iinc <= 0;
+			idec <= 0;
+			inot <= 0; 
+			ishl <= 0;
+			imvr <= 0;
+			imvrd <= 0;
+			ijmp <= 0; 
+			ijmpz <= 0;
+			ijpnz <= 1;
+			ilad <= 0;
+			isto <= 0;	
+			end
+		4'd14:	begin
+			inop <= 0;
+			iadd <= 0; 
+			isub <= 0;
+			iand <= 0; 
+			ior <= 0;
+			iinc <= 0;
+			idec <= 0;
+			inot <= 0; 
+			ishl <= 0;
+			imvr <= 0;
+			imvrd <= 0;
+			ijmp <= 0; 
+			ijmpz <= 0;
+			ijpnz <= 0;
+			ilad <= 1;
+			isto <= 0;	
+			end
+		4'd15:	begin
+			inop <= 0;
+			iadd <= 0; 
+			isub <= 0;
+			iand <= 0; 
+			ior <= 0;
+			iinc <= 0;
+			idec <= 0;
+			inot <= 0; 
+			ishl <= 0;
+			imvr <= 0;
+			imvrd <= 0;
+			ijmp <= 0; 
+			ijmpz <= 0;
+			ijpnz <= 0;
+			ilad <= 0;
+			isto <= 1;	
+			end
 		endcase
 	end
 end
@@ -136,14 +427,14 @@ always @(posedge clk or negedge reset)
 begin
 if(!reset) //reset清零
 begin
-	t0<=1;
-	t1<=0;
-	t2<=0;
-	t3<=0;
-	t4<=0;
-	t5<=0;
-	t6<=0;
-	t7<=0;
+	t0 <= 1;
+	t1 <= 0;
+	t2 <= 0;
+	t3 <= 0;
+	t4 <= 0;
+	t5 <= 0;
+	t6 <= 0;
+	t7 <= 0;
 end
 else
 begin
