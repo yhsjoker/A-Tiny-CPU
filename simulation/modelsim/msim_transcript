@@ -1,143 +1,143 @@
-# Reading E:/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
+# Reading D:/02_Software/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
 # do PCO_comolex_run_msim_rtl_verilog.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
 # vlib rtl_work
 # vmap work rtl_work
-# Copying E:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Copying D:\02_Software\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# ** Warning: Copied E:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+# ** Warning: Copied D:\02_Software\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/r0.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/r0.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module r0
 # 
 # Top level modules:
 # 	r0
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/r1.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/r1.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module r1
 # 
 # Top level modules:
 # 	r1
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/ram.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/ram.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module ram
 # 
 # Top level modules:
 # 	ram
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/z.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/z.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module z
 # 
 # Top level modules:
 # 	z
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/tr.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/tr.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module tr
 # 
 # Top level modules:
 # 	tr
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/top.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/top.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module top
 # 
 # Top level modules:
 # 	top
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/pc.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/pc.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module pc
 # 
 # Top level modules:
 # 	pc
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/ir.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/ir.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module ir
 # 
 # Top level modules:
 # 	ir
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/dr.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/dr.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module dr
 # 
 # Top level modules:
 # 	dr
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/cpu.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/cpu.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module cpu
 # 
 # Top level modules:
 # 	cpu
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/control.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/control.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module control
 # 
 # Top level modules:
 # 	control
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/ar.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/ar.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module ar
 # 
 # Top level modules:
 # 	ar
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/alu.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/alu.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/light_show.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/light_show.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module light_show
 # 
 # Top level modules:
 # 	light_show
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/clk_div.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/clk_div.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module clk_div
 # 
 # Top level modules:
 # 	clk_div
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/CPU_Controller.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/CPU_Controller.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module CPU_Controller
 # 
 # Top level modules:
 # 	CPU_Controller
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/qtsj.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/qtsj.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module qtsj
 # 
 # Top level modules:
 # 	qtsj
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/x.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/x.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module x
 # 
 # Top level modules:
 # 	x
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/r2.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/r2.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module r2
 # 
 # Top level modules:
 # 	r2
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/r3.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/r3.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module r3
 # 
 # Top level modules:
 # 	r3
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/rtl {I:/PCO_complex_teacher2023new/rtl/y.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/y.v}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module y
 # 
 # Top level modules:
 # 	y
 # 
-# vlog -vlog01compat -work work +incdir+I:/PCO_complex_teacher2023new/simulation/modelsim {I:/PCO_complex_teacher2023new/simulation/modelsim/top.vt}
+# vlog -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim {C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim/top.vt}
 # Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
 # -- Compiling module top_vlg_tst
 # 
@@ -168,48 +168,29 @@
 # Loading work.control
 # Loading work.ram
 # Loading work.light_show
-# ** Warning: (vsim-3015) I:/PCO_complex_teacher2023new/rtl/cpu.v(56): [PCDPC] - Port size (3 or 3) does not match connection size (4) for port 'alus'. The port definition is at: I:/PCO_complex_teacher2023new/rtl/alu.v(2).
+# ** Warning: (vsim-3015) C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/cpu.v(165): [PCDPC] - Port size (8 or 8) does not match connection size (1) for port 'dout'. The port definition is at: C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/z.v(5).
 # 
-#         Region: /top_vlg_tst/i1/mcpu/malu
-# ** Warning: (vsim-3015) I:/PCO_complex_teacher2023new/rtl/cpu.v(64): [PCDPC] - Port size (3 or 3) does not match connection size (4) for port 'alus'. The port definition is at: I:/PCO_complex_teacher2023new/rtl/control.v(5).
-# 
-#         Region: /top_vlg_tst/i1/mcpu/mcont
+#         Region: /top_vlg_tst/i1/mcpu/mz
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 # 
 #           File in use by: newlives  Hostname: LAPTOP-OROK5CHD  ProcessID: 18388
 # 
-#           Attempting to use alternate WLF file "./wlftw57mri".
+#           Attempting to use alternate WLF file "./wlft5jdtfh".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftw57mri
+#           Using alternate file: ./wlft5jdtfh
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Note: $finish    : I:/PCO_complex_teacher2023new/simulation/modelsim/top.vt(388)
-#    Time: 5380 ms  Iteration: 0  Instance: /top_vlg_tst
+# ** Note: $finish    : C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim/top.vt(234)
+#    Time: 970 ms  Iteration: 0  Instance: /top_vlg_tst
 # 1
-# Break in Module top_vlg_tst at I:/PCO_complex_teacher2023new/simulation/modelsim/top.vt line 388
+# Break in Module top_vlg_tst at C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim/top.vt line 234
 # Simulation Breakpoint: 1
-# Break in Module top_vlg_tst at I:/PCO_complex_teacher2023new/simulation/modelsim/top.vt line 388
+# Break in Module top_vlg_tst at C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim/top.vt line 234
 # MACRO ./PCO_comolex_run_msim_rtl_verilog.do PAUSED at line 37
-add wave -position insertpoint  \
-sim:/top_vlg_tst/i1/rs
-add wave -position insertpoint  \
-sim:/top_vlg_tst/i1/rd
-restart -f
-# ** Warning: (vsim-3015) I:/PCO_complex_teacher2023new/rtl/cpu.v(56): [PCDPC] - Port size (3 or 3) does not match connection size (4) for port 'alus'. The port definition is at: I:/PCO_complex_teacher2023new/rtl/alu.v(2).
-# 
-#         Region: /top_vlg_tst/i1/mcpu/malu
-# ** Warning: (vsim-3015) I:/PCO_complex_teacher2023new/rtl/cpu.v(64): [PCDPC] - Port size (3 or 3) does not match connection size (4) for port 'alus'. The port definition is at: I:/PCO_complex_teacher2023new/rtl/control.v(5).
-# 
-#         Region: /top_vlg_tst/i1/mcpu/mcont
-run -all
-# ** Note: $finish    : I:/PCO_complex_teacher2023new/simulation/modelsim/top.vt(388)
-#    Time: 5380 ms  Iteration: 0  Instance: /top_vlg_tst
-# 1
-# Break in Module top_vlg_tst at I:/PCO_complex_teacher2023new/simulation/modelsim/top.vt line 388

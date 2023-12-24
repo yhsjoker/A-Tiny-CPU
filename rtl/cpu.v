@@ -8,6 +8,18 @@ module cpu(
     input[1:0]      cpustate,
     output[15:0]    addr,
     output[7:0]     data_out, r0dbus, r1dbus, r2dbus, r3dbus, irout, 
+    output          read, write, 
+    output          arload, arinc, 
+    output          pcinc, pcload, pcbus, 
+    output          drload, drhbus, drlbus, 
+    output          trload, trbus, 
+    output          irload, 
+    output          r0load, r0bus, 
+    output          r1load, r1bus, 
+    output          r2load, r2bus, 
+    output          r3load, r3bus, 
+    output          zload, 
+    output          membus, busmem, 
     output          zout, clr
     );
 //补充自行设计的控制信号的端口说明，都是output
@@ -17,9 +29,7 @@ wire[3:0]   alus;
 wire        clk_choose, clk_run;
 wire[15:0]  dbus, pcdbus;
 wire[7:0]   drdbus, trdbus, ydbus, xout, aluout;
-wire aluload, arload, drload, irload, 
-    pcload, r0load, r1load, r2load, 
-    r3load, trload, xload, yload, zload;
+
 //定义一些需要的内部信号
 
 //qtsj(clk_quick,clk_slow,clk_delay,clr,rst,SW_choose,A1,cpustate,clk_run,clk_choose);
@@ -79,7 +89,7 @@ ir mir(
     .din        (drdbus),
     .clk        (clk_choose),
     .rst        (rst),
-    .drload     (drload),
+    .irload     (irload),
     .dout       (irout)
 );
 
@@ -89,7 +99,7 @@ r0 mr0(
     .clk        (clk_choose),
     .rst        (rst),
     .r0load     (r0load),
-    .dout       (r0bus)
+    .dout       (r0dbus)
 );
 
 //r1(din, clk, rst,r1load, dout);补充r1实例化语句
@@ -98,7 +108,7 @@ r1 mr1(
     .clk        (clk_choose),
     .rst        (rst),
     .r1load     (r1load),
-    .dout       (r1bus)
+    .dout       (r1dbus)
 );
 
 //r2(din, clk, rst,r2load, dout);补充r2实例化语句
@@ -107,7 +117,7 @@ r2 mr2(
     .clk        (clk_choose),
     .rst        (rst),
     .r2load     (r2load),
-    .dout       (r2bus)
+    .dout       (r2dbus)
 );
 
 //r3(din, clk, rst,r3load, dout);补充r3实例化语句
@@ -116,7 +126,7 @@ r3 mr3(
     .clk        (clk_choose),
     .rst        (rst),
     .r3load     (r3load),
-    .dout       (r3bus)
+    .dout       (r3dbus)
 );
 
 // x(din, clk, rst,xload, dout);补充x实例化语句
@@ -157,54 +167,72 @@ z mz(
 //control(din,clk,rst,z,cpustate,......,clr);补充control实例化语句
 control mcontrol(
     .din        (irout),
-    .clk        (),
+    .clk        (clk_run),
     .rst        (rst),
     .z          (zout),
     .cpustate   (cpustate),
 
-    .aluload    (aluload),
     .arload     (arload),
     .arinc      (arinc),
+
     .drload     (drload),
     .drhbus     (drhbus),
     .drlbus     (drlbus),
+
     .irload     (irload),
+
     .pcload     (pcload),
     .pcinc      (pcinc),
     .pcbus      (pcbus),
+
     .r0load     (r0load),
     .r0bus      (r0bus),
+
     .r1load     (r1load),
     .r1bus      (r1bus),
+
     .r2load     (r2load),
     .r2bus      (r2bus),
+
     .r3load     (r3load),
     .r3bus      (r3bus),
+
     .trload     (trload),
     .trbus      (trbus),
+
     .xload      (xload),
+
     .yload      (yload),
     .ybus       (ybus),
+
     .zload      (zload),
+
+    .read       (read),
+    .write      (write),
+
+    .membus     (membus),
+    .busmem     (busmem),
+
+    .alus       (alus),
 
     .clr        (clr)
 );
 
 //allocate dbus
-assign dbus[15:0]=(pcbus)?pcdbus[15:0]:16'bzzzzzzzzzzzzzzzz;
-assign dbus[15:8]=(drhbus)?drdbus[7:0]:8'bzzzzzzzz;
-assign dbus[7:0]=(drlbus)?drdbus[7:0]:8'bzzzzzzzz;
-assign dbus[7:0]=(trbus)?trdbus[7:0]:8'bzzzzzzzz;
+assign dbus[15:0] = (pcbus) ? pcdbus[15:0] : 16'bzzzzzzzzzzzzzzzz;
+assign dbus[15:8] = (drhbus) ? drdbus[7:0] : 8'bzzzzzzzz;
+assign dbus[7:0] = (drlbus) ? drdbus[7:0] : 8'bzzzzzzzz;
+assign dbus[7:0] = (trbus) ? trdbus[7:0] : 8'bzzzzzzzz;
 
-assign dbus[7:0]=(r1bus)?r1dbus[7:0]:8'bzzzzzzzz;
-assign dbus[7:0]=(r0bus)?r0dbus[7:0]:8'bzzzzzzzz;
-assign dbus[7:0]=(r2bus)?r2dbus[7:0]:8'bzzzzzzzz;
-assign dbus[7:0]=(r3bus)?r3dbus[7:0]:8'bzzzzzzzz;
+assign dbus[7:0] = (r1bus) ? r1dbus[7:0] : 8'bzzzzzzzz;
+assign dbus[7:0] = (r0bus) ? r0dbus[7:0] : 8'bzzzzzzzz;
+assign dbus[7:0] = (r2bus) ? r2dbus[7:0] : 8'bzzzzzzzz;
+assign dbus[7:0] = (r3bus) ? r3dbus[7:0] : 8'bzzzzzzzz;
 
-assign dbus[7:0]=(ybus)?ydbus[7:0]:8'bzzzzzzzz;
+assign dbus[7:0] = (ybus) ? ydbus[7:0] : 8'bzzzzzzzz;
 
-assign dbus[7:0]=(membus)?data_in[7:0]:8'bzzzzzzzz;
-assign data_out=(busmem)?dbus[7:0]:8'bzzzzzzzz;
+assign dbus[7:0] = (membus) ? data_in[7:0] : 8'bzzzzzzzz;
+assign data_out = (busmem) ? dbus[7:0] : 8'bzzzzzzzz;
 
 
 
