@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PCO_comolex
-Sun Dec 24 18:48:28 2023
+Mon Dec 25 20:59:27 2023
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
 
 
@@ -63,13 +63,13 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Dec 24 18:48:28 2023       ;
+; Analysis & Synthesis Status        ; Successful - Mon Dec 25 20:59:27 2023       ;
 ; Quartus II 64-Bit Version          ; 14.0.0 Build 200 06/17/2014 SJ Full Version ;
 ; Revision Name                      ; PCO_comolex                                 ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 2,490                                       ;
-;     Total combinational functions  ; 2,388                                       ;
+; Total logic elements               ; 2,488                                       ;
+;     Total combinational functions  ; 2,387                                       ;
 ;     Dedicated logic registers      ; 301                                         ;
 ; Total registers                    ; 301                                         ;
 ; Total pins                         ; 166                                         ;
@@ -230,16 +230,16 @@ agreement for further details.
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Estimated Total logic elements              ; 2,490                   ;
+; Estimated Total logic elements              ; 2,488                   ;
 ;                                             ;                         ;
-; Total combinational functions               ; 2388                    ;
+; Total combinational functions               ; 2387                    ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 967                     ;
-;     -- 3 input functions                    ; 1172                    ;
+;     -- 4 input functions                    ; 970                     ;
+;     -- 3 input functions                    ; 1168                    ;
 ;     -- <=2 input functions                  ; 249                     ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 2233                    ;
+;     -- normal mode                          ; 2232                    ;
 ;     -- arithmetic mode                      ; 155                     ;
 ;                                             ;                         ;
 ; Total registers                             ; 301                     ;
@@ -261,16 +261,16 @@ agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+--------------+
-; |top                                      ; 2388 (135)        ; 301 (0)      ; 512         ; 0            ; 0       ; 0         ; 166  ; 0            ; |top                                                               ; work         ;
+; |top                                      ; 2387 (135)        ; 301 (0)      ; 512         ; 0            ; 0       ; 0         ; 166  ; 0            ; |top                                                               ; work         ;
 ;    |clk_div:delay|                        ; 45 (45)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|clk_div:delay                                                 ; work         ;
 ;    |clk_div:light|                        ; 33 (33)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|clk_div:light                                                 ; work         ;
 ;    |clk_div:mem|                          ; 12 (12)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|clk_div:mem                                                   ; work         ;
 ;    |clk_div:quick|                        ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|clk_div:quick                                                 ; work         ;
 ;    |clk_div:slow|                         ; 45 (45)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|clk_div:slow                                                  ; work         ;
-;    |cpu:mcpu|                             ; 301 (69)          ; 138 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu                                                      ; work         ;
-;       |alu:malu|                          ; 80 (80)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|alu:malu                                             ; work         ;
+;    |cpu:mcpu|                             ; 300 (68)          ; 138 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu                                                      ; work         ;
+;       |alu:malu|                          ; 79 (79)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|alu:malu                                             ; work         ;
 ;       |ar:mar|                            ; 38 (38)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|ar:mar                                               ; work         ;
-;       |control:mcontrol|                  ; 72 (72)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|control:mcontrol                                     ; work         ;
+;       |control:mcontrol|                  ; 73 (73)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|control:mcontrol                                     ; work         ;
 ;       |dr:mdr|                            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|dr:mdr                                               ; work         ;
 ;       |ir:mir|                            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|ir:mir                                               ; work         ;
 ;       |pc:mpc|                            ; 33 (33)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|pc:mpc                                               ; work         ;
@@ -281,8 +281,8 @@ agreement for further details.
 ;       |r3:mr3|                            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|r3:mr3                                               ; work         ;
 ;       |tr:mtr|                            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|tr:mtr                                               ; work         ;
 ;       |x:mx|                              ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|x:mx                                                 ; work         ;
-;       |y:my|                              ; 3 (3)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|y:my                                                 ; work         ;
-;       |z:mz|                              ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|z:mz                                                 ; work         ;
+;       |y:my|                              ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|y:my                                                 ; work         ;
+;       |z:mz|                              ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:mcpu|z:mz                                                 ; work         ;
 ;    |light_show:show|                      ; 24 (24)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|light_show:show                                               ; work         ;
 ;    |ram:mm|                               ; 1792 (1792)       ; 44 (44)      ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|ram:mm                                                        ; work         ;
 ;       |altsyncram:memory_rtl_0|           ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|ram:mm|altsyncram:memory_rtl_0                                ; work         ;
@@ -595,17 +595,17 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
 ; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |top|cpu:mcpu|ar:mar|dout[5]  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|cpu:mcpu|pc:mpc|dout[13] ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|clk_div:slow|count[15]   ;
-; 3:1                ; 123 bits  ; 246 LEs       ; 0 LEs                ; 246 LEs                ; Yes        ; |top|ram:mm|cnt[87]           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|cpu:mcpu|pc:mpc|dout[12] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|clk_div:slow|count[18]   ;
+; 3:1                ; 123 bits  ; 246 LEs       ; 0 LEs                ; 246 LEs                ; Yes        ; |top|ram:mm|cnt[63]           ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top|clk_div:mem|div_clk      ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|clk_div:light|count[6]   ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|clk_div:delay|count[30]  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top|cpu:mcpu|pc:mpc|dout[6]  ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 35 LEs               ; 7 LEs                  ; Yes        ; |top|cpu:mcpu|y:my|dout[7]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|clk_div:light|count[18]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|clk_div:delay|count[14]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top|cpu:mcpu|pc:mpc|dout[0]  ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |top|cpu:mcpu|ar:mar|dout     ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |top|ram:mm|cnt               ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top|ram:mm|memory            ;
+; 9:1                ; 7 bits    ; 42 LEs        ; 35 LEs               ; 7 LEs                  ; No         ; |top|cpu:mcpu|alu:malu|Mux0   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
 
 
@@ -869,20 +869,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SLD               ; 2                           ;
 ;     plain             ; 36                          ;
 ; cycloneiii_io_obuf    ; 24                          ;
-; cycloneiii_lcell_comb ; 2392                        ;
+; cycloneiii_lcell_comb ; 2391                        ;
 ;     arith             ; 155                         ;
 ;         2 data inputs ; 141                         ;
 ;         3 data inputs ; 14                          ;
-;     normal            ; 2237                        ;
+;     normal            ; 2236                        ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 14                          ;
 ;         2 data inputs ; 96                          ;
-;         3 data inputs ; 1158                        ;
-;         4 data inputs ; 967                         ;
+;         3 data inputs ; 1154                        ;
+;         4 data inputs ; 970                         ;
 ; cycloneiii_ram_block  ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 14.60                       ;
-; Average LUT depth     ; 6.64                        ;
+; Max LUT depth         ; 16.40                       ;
+; Average LUT depth     ; 7.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -901,7 +901,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 14.0.0 Build 200 06/17/2014 SJ Full Version
-    Info: Processing started: Sun Dec 24 18:48:26 2023
+    Info: Processing started: Mon Dec 25 20:59:24 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PCO_comolex -c PCO_comolex
 Info (11104): Parallel Compilation has detected 20 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 14 of the 14 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/r0.v
@@ -3191,15 +3191,15 @@ Info (17049): 123 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/output_files/PCO_comolex.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2700 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2704 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
     Info (21059): Implemented 152 output pins
-    Info (21061): Implemented 2518 logic cells
+    Info (21061): Implemented 2522 logic cells
     Info (21064): Implemented 16 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2142 warnings
-    Info: Peak virtual memory: 4832 megabytes
-    Info: Processing ended: Sun Dec 24 18:48:28 2023
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 4841 megabytes
+    Info: Processing ended: Mon Dec 25 20:59:27 2023
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 
 

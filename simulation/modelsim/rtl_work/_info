@@ -17,7 +17,7 @@ r1
 Z8 o-vlog01compat -work work -O0
 Z9 !s92 -vlog01compat -work work +incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl -O0
 Z10 !s100 GL[VAESbh<>Z8oQa7=dDO0
-Z11 !s108 1703421214.600000
+Z11 !s108 1703509174.452000
 Z12 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/alu.v|
 Z13 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/alu.v|
 !i10b 1
@@ -37,7 +37,7 @@ r1
 R8
 R9
 Z19 !s100 :UIK3]Qh^bfSmCA=Lji7N0
-Z20 !s108 1703421214.563000
+Z20 !s108 1703509174.412000
 Z21 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/ar.v|
 Z22 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/ar.v|
 !i10b 1
@@ -57,7 +57,7 @@ r1
 R8
 R9
 Z28 !s100 TVBC9_1;A=MmUB6:j[i<?0
-Z29 !s108 1703421214.676000
+Z29 !s108 1703509174.534000
 Z30 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/clk_div.v|
 Z31 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/clk_div.v|
 !i10b 1
@@ -77,7 +77,7 @@ r1
 R8
 R9
 Z37 !s100 <DUWIfNN@@FA7o:FVI4<;1
-Z38 !s108 1703421214.522000
+Z38 !s108 1703509174.372000
 Z39 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/control.v|
 Z40 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/control.v|
 !i10b 1
@@ -97,7 +97,7 @@ r1
 R8
 R9
 Z46 !s100 lDNOa4T:;]2kbG7Zj<>oO3
-Z47 !s108 1703421214.486000
+Z47 !s108 1703509174.332000
 Z48 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/cpu.v|
 Z49 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/cpu.v|
 !i10b 1
@@ -118,7 +118,7 @@ R8
 R9
 Z55 n@c@p@u_@controller
 Z56 !s100 ifn7zC7TPmPha728]@hMk2
-Z57 !s108 1703421214.713000
+Z57 !s108 1703509174.570000
 Z58 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/CPU_Controller.v|
 Z59 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/CPU_Controller.v|
 !i10b 1
@@ -138,7 +138,7 @@ r1
 R8
 R9
 Z65 !s100 H][bjicQ:h=[Bzk_f7G3^1
-Z66 !s108 1703421214.449000
+Z66 !s108 1703509174.298000
 Z67 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/dr.v|
 Z68 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/dr.v|
 !i10b 1
@@ -158,7 +158,7 @@ r1
 R8
 R9
 Z74 !s100 2GVhQ1GPoVQboBZlgD5Hc3
-Z75 !s108 1703421214.411000
+Z75 !s108 1703509174.260000
 Z76 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/ir.v|
 Z77 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/ir.v|
 !i10b 1
@@ -178,7 +178,7 @@ r1
 R8
 R9
 Z83 !s100 [3@kYZO^KIW4Z[JdJL`ch0
-Z84 !s108 1703421214.636000
+Z84 !s108 1703509174.492000
 Z85 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/light_show.v|
 Z86 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/light_show.v|
 !i10b 1
@@ -198,7 +198,7 @@ r1
 R8
 R9
 Z92 !s100 Rg[6@TTTX>JDdORfehhmI0
-Z93 !s108 1703421214.375000
+Z93 !s108 1703509174.221000
 Z94 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/pc.v|
 Z95 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/pc.v|
 !i10b 1
@@ -218,7 +218,7 @@ r1
 R8
 R9
 Z101 !s100 PB`C7XoHJz6`flIMbT@8^3
-Z102 !s108 1703421214.751000
+Z102 !s108 1703509174.607000
 Z103 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/qtsj.v|
 Z104 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/qtsj.v|
 !i10b 1
@@ -237,7 +237,7 @@ r1
 31
 R8
 Z110 !s100 LKl^=ig8=`knMo130RmWS0
-Z111 !s108 1703421214.143000
+Z111 !s108 1703509173.976000
 Z112 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/r0.v|
 Z113 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/r0.v|
 R9
@@ -258,7 +258,7 @@ r1
 R8
 R9
 Z119 !s100 F=KV[oe:6YR1nelQL4b@33
-Z120 !s108 1703421214.189000
+Z120 !s108 1703509174.016000
 Z121 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/r1.v|
 Z122 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/r1.v|
 !i10b 1
@@ -278,7 +278,7 @@ r1
 R8
 R9
 Z128 !s100 DD<z@V?k?JJi0mlS[6VoE1
-Z129 !s108 1703421214.827000
+Z129 !s108 1703509174.680000
 Z130 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/r2.v|
 Z131 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/r2.v|
 !i10b 1
@@ -298,7 +298,7 @@ r1
 R8
 R9
 Z137 !s100 Zdcj_5L=:g^h=K1jb^VGe1
-Z138 !s108 1703421214.864000
+Z138 !s108 1703509174.716000
 Z139 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/r3.v|
 Z140 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/r3.v|
 !i10b 1
@@ -318,7 +318,7 @@ r1
 R8
 R9
 Z145 !s100 jf;nMkonlTdiGcLk4EDMV1
-Z146 !s108 1703421214.225000
+Z146 !s108 1703509174.053000
 Z147 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/ram.v|
 Z148 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/ram.v|
 !i10b 1
@@ -338,7 +338,7 @@ r1
 R8
 R9
 Z154 !s100 FTBj1`L<j2T5Y`>Vm5mf00
-Z155 !s108 1703421214.337000
+Z155 !s108 1703509174.182000
 Z156 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/top.v|
 Z157 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/top.v|
 !i10b 1
@@ -346,11 +346,11 @@ Z157 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/De
 !s101 -O0
 vtop_vlg_tst
 !i10b 1
-!s100 H=^AmgKWWaldN62^Th1oV2
-IT_N_TK2Uc>hJi5:[CDOIM0
+!s100 o]CjdS7Mf[N@Em^Igeo9h3
+IcRYE6jlMNJD=d0^zW95h11
 VWH`X8iAJ@;Z6_Z>8HHbjI2
 R3
-w1703413273
+w1703509164
 8C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim/top.vt
 FC:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim/top.vt
 L0 29
@@ -358,7 +358,7 @@ R7
 r1
 !s85 0
 31
-!s108 1703421214.941000
+!s108 1703509174.793000
 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim/top.vt|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim/top.vt|
 !s101 -O0
@@ -378,7 +378,7 @@ r1
 R8
 R9
 Z163 !s100 BF[[ZXd;hAzLjiF:R;elH2
-Z164 !s108 1703421214.300000
+Z164 !s108 1703509174.147000
 Z165 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/tr.v|
 Z166 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/tr.v|
 !i10b 1
@@ -398,7 +398,7 @@ r1
 R8
 R9
 Z172 !s100 ;zhImU[TzaaXCfEUZnCFQ1
-Z173 !s108 1703421214.789000
+Z173 !s108 1703509174.644000
 Z174 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/x.v|
 Z175 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/x.v|
 !i10b 1
@@ -420,15 +420,15 @@ R9
 !i10b 1
 Z181 !s100 1B0:Q4U7LFU:44IGYWLR[3
 !s85 0
-Z182 !s108 1703421214.902000
+Z182 !s108 1703509174.753000
 Z183 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/y.v|
 Z184 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/y.v|
 !s101 -O0
 vz
-Z185 IW6M@04`NlO4<DTPUj[n?b0
+Z185 ISVold0[bRL:5V]mOfPW2;1
 Z186 VmXUPmj=G5ibN[4d8FUo1>0
 R3
-Z187 w1703038125
+Z187 w1703429258
 Z188 8C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/z.v
 Z189 FC:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/z.v
 L0 2
@@ -437,8 +437,8 @@ r1
 31
 R8
 R9
-Z190 !s100 n6Y@AA^457PXhZRT6bMcM1
-Z191 !s108 1703421214.262000
+Z190 !s100 <9jUJlVDf9XjVHoP:zRWm1
+Z191 !s108 1703509174.092000
 Z192 !s107 C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/z.v|
 Z193 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl|C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/rtl/z.v|
 !i10b 1

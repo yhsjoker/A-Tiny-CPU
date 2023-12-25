@@ -177,20 +177,20 @@
 # 
 #           File in use by: newlives  Hostname: LAPTOP-OROK5CHD  ProcessID: 18388
 # 
-#           Attempting to use alternate WLF file "./wlft9r3zae".
+#           Attempting to use alternate WLF file "./wlftfi0rsw".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlft9r3zae
+#           Using alternate file: ./wlftfi0rsw
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Note: $finish    : C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim/top.vt(234)
-#    Time: 970 ms  Iteration: 0  Instance: /top_vlg_tst
+# ** Note: $finish    : C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim/top.vt(445)
+#    Time: 4020 ms  Iteration: 0  Instance: /top_vlg_tst
 # 1
-# Break in Module top_vlg_tst at C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim/top.vt line 234
+# Break in Module top_vlg_tst at C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim/top.vt line 445
 # Simulation Breakpoint: 1
-# Break in Module top_vlg_tst at C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim/top.vt line 234
+# Break in Module top_vlg_tst at C:/Users/24450/Desktop/CSAPP/PCO_complex_stu_2023/simulation/modelsim/top.vt line 445
 # MACRO ./PCO_comolex_run_msim_rtl_verilog.do PAUSED at line 37
