@@ -177,10 +177,10 @@
 # 
 #           File in use by: newlives  Hostname: LAPTOP-OROK5CHD  ProcessID: 18388
 # 
-#           Attempting to use alternate WLF file "./wlft5jdtfh".
+#           Attempting to use alternate WLF file "./wlft9r3zae".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlft5jdtfh
+#           Using alternate file: ./wlft9r3zae
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
