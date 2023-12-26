@@ -60,6 +60,13 @@ module ram(
 	end
 
 
+	/*-------------IN模式下的指令存储和CHECK模式下的指令检查--------------*/
+
+	always @(posedge clk or negedge reset) //将A1按钮延时1个时钟
+	begin
+		if(!reset) A_d1 <= 1;
+		else A_d1 <= A1;
+	end
 	always @(posedge clk or negedge reset) //将A1按钮延时2个时钟
 	begin
 		if(!reset) A_d2 <= 1;

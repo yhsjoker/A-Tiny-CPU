@@ -1,14 +1,14 @@
-Fitter Status : Successful - Wed Dec 27 00:46:08 2023
+Fitter Status : Successful - Wed Dec 27 02:11:34 2023
 Quartus II 64-Bit Version : 14.0.0 Build 200 06/17/2014 SJ Full Version
 Revision Name : PCO_comolex
 Top-level Entity Name : top
 Family : Cyclone IV E
 Device : EP4CE40F23C8
 Timing Models : Final
-Total logic elements : 575 / 39,600 ( 1 % )
-    Total combinational functions : 553 / 39,600 ( 1 % )
-    Dedicated logic registers : 320 / 39,600 ( < 1 % )
-Total registers : 320
+Total logic elements : 625 / 39,600 ( 2 % )
+    Total combinational functions : 600 / 39,600 ( 2 % )
+    Dedicated logic registers : 329 / 39,600 ( < 1 % )
+Total registers : 329
 Total pins : 166 / 329 ( 50 % )
 Total virtual pins : 0
 Total memory bits : 1,536 / 1,161,216 ( < 1 % )

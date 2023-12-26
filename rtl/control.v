@@ -48,10 +48,10 @@ module control(
 	wire shl1, shl2;
 	wire mvr1;
 	wire mvrd1, mvrd2;
-	wire jmp1, jmp2, jmp3;
-	wire skp1, skp2;
 	wire lad1, lad2, lad3, lad4, lad5;
 	wire sto1, sto2, sto3, sto4, sto5;
+	wire jmp1, jmp2, jmp3;
+	wire skp1, skp2;
 			
 	//加上自行设计的指令，这里是译码器的输出，所以nop指令经译码器输出后为inop。
 	//类似地，add指令指令经译码器输出后为iadd；inac指令经译码器输出后为iinac，......
@@ -66,11 +66,11 @@ module control(
 	reg	ishl;
 	reg	imvr;
 	reg	imvrd;
+	reg	ilad;
+	reg	isto;
 	reg	ijmp;
 	reg	ijmpz;
 	reg	ijpnz;
-	reg	ilad;
-	reg	isto;
 
 	//时钟节拍，8个为一个指令周期，t0-t2分别对应fetch1-fetch3，t3-t7分别对应各指令的执行周期，当然不是所有指令都需要5个节拍的。例如add指令只需要2个节拍：t3和t4
 	reg t0, t1, t2, t3, t4, t5, t6, t7; //时钟节拍，8个为一个周期
@@ -223,328 +223,325 @@ module control(
 	else 
 		begin
 			case(din[7:4])	//译码处理过程
-			4'd0:  begin		//op为0000，是nop指令，因此这里inop的值是1，而其他指令应该清零，请补充为其他指令清零的语句
-				alus  <= 4'bxxxx;
-				inop  <= 1;
-				iadd  <= 0; 
-				isub  <= 0;
-				iand  <= 0; 
-				ior   <= 0;
-				iinc  <= 0;
-				idec  <= 0;
-				inot  <= 0; 
-				ishl  <= 0;
-				imvr  <= 0;
-				imvrd <= 0;
-				ijmp  <= 0; 
-				ijmpz <= 0;
-				ijpnz <= 0;
-				ilad  <= 0;
-				isto  <= 0;
+				4'd0:  begin		//nop
+					alus  <= 4'bxxxx;
+					inop  <= 1;
+					iadd  <= 0; 
+					isub  <= 0;
+					iand  <= 0; 
+					ior   <= 0;
+					iinc  <= 0;
+					idec  <= 0;
+					inot  <= 0; 
+					ishl  <= 0;
+					imvr  <= 0;
+					imvrd <= 0;
+					ilad  <= 0;
+					isto  <= 0;
+					ijmp  <= 0; 
+					ijmpz <= 0;
+					ijpnz <= 0;
 				end
 
-			4'd1:  begin
-					//op为0001，应该是add指令，因此iadd指令为1，其他指令都应该是0。
-					//后续各分支类似，只有一条指令为1，其他指令为0，以下分支都给出nop指令的赋值，需要补充其他指令
-				alus  <= 4'b0001;
-				inop  <= 0;
-				iadd  <= 1; 
-				isub  <= 0;
-				iand  <= 0; 
-				ior   <= 0;
-				iinc  <= 0;
-				idec  <= 0;
-				inot  <= 0; 
-				ishl  <= 0;
-				imvr  <= 0;
-				imvrd <= 0;
-				ijmp  <= 0; 
-				ijmpz <= 0;
-				ijpnz <= 0;
-				ilad  <= 0;
-				isto  <= 0;
+				4'd1:  begin
+					alus  <= 4'b0001;
+					inop  <= 0;
+					iadd  <= 1; 
+					isub  <= 0;
+					iand  <= 0; 
+					ior   <= 0;
+					iinc  <= 0;
+					idec  <= 0;
+					inot  <= 0; 
+					ishl  <= 0;
+					imvr  <= 0;
+					imvrd <= 0;
+					ilad  <= 0;
+					isto  <= 0;
+					ijmp  <= 0; 
+					ijmpz <= 0;
+					ijpnz <= 0;
 				end
 
-			4'd2:  begin
-				alus  <= 4'b0010;
-				inop  <= 0;
-				iadd  <= 0; 
-				isub  <= 1;
-				iand  <= 0; 
-				ior   <= 0;
-				iinc  <= 0;
-				idec  <= 0;
-				inot  <= 0; 
-				ishl  <= 0;
-				imvr  <= 0;
-				imvrd <= 0;
-				ijmp  <= 0; 
-				ijmpz <= 0;
-				ijpnz <= 0;
-				ilad  <= 0;
-				isto  <= 0;
+				4'd2:  begin
+					alus  <= 4'b0010;
+					inop  <= 0;
+					iadd  <= 0; 
+					isub  <= 1;
+					iand  <= 0; 
+					ior   <= 0;
+					iinc  <= 0;
+					idec  <= 0;
+					inot  <= 0; 
+					ishl  <= 0;
+					imvr  <= 0;
+					imvrd <= 0;
+					ilad  <= 0;
+					isto  <= 0;
+					ijmp  <= 0; 
+					ijmpz <= 0;
+					ijpnz <= 0;
 				end
 
-			4'd3:  begin
-				alus  <= 4'b0101;
-				inop  <= 0;
-				iadd  <= 0; 
-				isub  <= 0;
-				iand  <= 1; 
-				ior   <= 0;
-				iinc  <= 0;
-				idec  <= 0;
-				inot  <= 0; 
-				ishl  <= 0;
-				imvr  <= 0;
-				imvrd <= 0;
-				ijmp  <= 0; 
-				ijmpz <= 0;
-				ijpnz <= 0;
-				ilad  <= 0;
-				isto  <= 0;
+				4'd3:  begin
+					alus  <= 4'b0101;
+					inop  <= 0;
+					iadd  <= 0; 
+					isub  <= 0;
+					iand  <= 1; 
+					ior   <= 0;
+					iinc  <= 0;
+					idec  <= 0;
+					inot  <= 0; 
+					ishl  <= 0;
+					imvr  <= 0;
+					imvrd <= 0;
+					ilad  <= 0;
+					isto  <= 0;
+					ijmp  <= 0; 
+					ijmpz <= 0;
+					ijpnz <= 0;
 				end
 
-			4'd4:  begin
-				alus  <= 4'b0110;
-				inop  <= 0;
-				iadd  <= 0; 
-				isub  <= 0;
-				iand  <= 0; 
-				ior   <= 1;
-				iinc  <= 0;
-				idec  <= 0;
-				inot  <= 0; 
-				ishl  <= 0;
-				imvr  <= 0;
-				imvrd <= 0;
-				ijmp  <= 0; 
-				ijmpz <= 0;
-				ijpnz <= 0;
-				ilad  <= 0;
-				isto  <= 0;
+				4'd4:  begin
+					alus  <= 4'b0110;
+					inop  <= 0;
+					iadd  <= 0; 
+					isub  <= 0;
+					iand  <= 0; 
+					ior   <= 1;
+					iinc  <= 0;
+					idec  <= 0;
+					inot  <= 0; 
+					ishl  <= 0;
+					imvr  <= 0;
+					imvrd <= 0;
+					ilad  <= 0;
+					isto  <= 0;
+					ijmp  <= 0; 
+					ijmpz <= 0;
+					ijpnz <= 0;
 				end
 
-			4'd5:  begin
-				alus  <= 4'b0011;
-				inop  <= 0;
-				iadd  <= 0; 
-				isub  <= 0;
-				iand  <= 0; 
-				ior   <= 0;
-				iinc  <= 1;
-				idec  <= 0;
-				inot  <= 0; 
-				ishl  <= 0;
-				imvr  <= 0;
-				imvrd <= 0;
-				ijmp  <= 0; 
-				ijmpz <= 0;
-				ijpnz <= 0;
-				ilad  <= 0;
-				isto  <= 0;
+				4'd5:  begin
+					alus  <= 4'b0011;
+					inop  <= 0;
+					iadd  <= 0; 
+					isub  <= 0;
+					iand  <= 0; 
+					ior   <= 0;
+					iinc  <= 1;
+					idec  <= 0;
+					inot  <= 0; 
+					ishl  <= 0;
+					imvr  <= 0;
+					imvrd <= 0;
+					ilad  <= 0;
+					isto  <= 0;
+					ijmp  <= 0; 
+					ijmpz <= 0;
+					ijpnz <= 0;
 				end
 
-			4'd6:	begin
-				alus  <= 4'b0100;
-				inop  <= 0;
-				iadd  <= 0; 
-				isub  <= 0;
-				iand  <= 0; 
-				ior   <= 0;
-				iinc  <= 0;
-				idec  <= 1;
-				inot  <= 0; 
-				ishl  <= 0;
-				imvr  <= 0;
-				imvrd <= 0;
-				ijmp  <= 0; 
-				ijmpz <= 0;
-				ijpnz <= 0;
-				ilad  <= 0;
-				isto  <= 0;
+				4'd6:	begin
+					alus  <= 4'b0100;
+					inop  <= 0;
+					iadd  <= 0; 
+					isub  <= 0;
+					iand  <= 0; 
+					ior   <= 0;
+					iinc  <= 0;
+					idec  <= 1;
+					inot  <= 0; 
+					ishl  <= 0;
+					imvr  <= 0;
+					imvrd <= 0;
+					ilad  <= 0;
+					isto  <= 0;
+					ijmp  <= 0; 
+					ijmpz <= 0;
+					ijpnz <= 0;
 				end
-				
-			4'd7:	begin
-				alus  <= 4'b0111;
-				inop  <= 0;
-				iadd  <= 0; 
-				isub  <= 0;
-				iand  <= 0; 
-				ior   <= 0;
-				iinc  <= 0;
-				idec  <= 0;
-				inot  <= 1; 
-				ishl  <= 0;
-				imvr  <= 0;
-				imvrd <= 0;
-				ijmp  <= 0; 
-				ijmpz <= 0;
-				ijpnz <= 0;
-				ilad  <= 0;
-				isto  <= 0;
-				end
-
-			4'd8:	begin
-				alus  <= 4'b1000;
-				inop  <= 0;
-				iadd  <= 0; 
-				isub  <= 0;
-				iand  <= 0; 
-				ior   <= 0;
-				iinc  <= 0;
-				idec  <= 0;
-				inot  <= 0; 
-				ishl  <= 1;
-				imvr  <= 0;
-				imvrd <= 0;
-				ijmp  <= 0; 
-				ijmpz <= 0;
-				ijpnz <= 0;
-				ilad  <= 0;
-				isto  <= 0;	
+					
+				4'd7:	begin
+					alus  <= 4'b0111;
+					inop  <= 0;
+					iadd  <= 0; 
+					isub  <= 0;
+					iand  <= 0; 
+					ior   <= 0;
+					iinc  <= 0;
+					idec  <= 0;
+					inot  <= 1; 
+					ishl  <= 0;
+					imvr  <= 0;
+					imvrd <= 0;
+					ilad  <= 0;
+					isto  <= 0;
+					ijmp  <= 0; 
+					ijmpz <= 0;
+					ijpnz <= 0;
 				end
 
-			4'd9:	begin
-				alus  <= 4'bxxxx;
-				inop  <= 0;
-				iadd  <= 0; 
-				isub  <= 0;
-				iand  <= 0; 
-				ior   <= 0;
-				iinc  <= 0;
-				idec  <= 0;
-				inot  <= 0; 
-				ishl  <= 0;
-				imvr  <= 1;
-				imvrd <= 0;
-				ijmp  <= 0; 
-				ijmpz <= 0;
-				ijpnz <= 0;
-				ilad  <= 0;
-				isto  <= 0;
+				4'd8:	begin
+					alus  <= 4'b1000;
+					inop  <= 0;
+					iadd  <= 0; 
+					isub  <= 0;
+					iand  <= 0; 
+					ior   <= 0;
+					iinc  <= 0;
+					idec  <= 0;
+					inot  <= 0; 
+					ishl  <= 1;
+					imvr  <= 0;
+					imvrd <= 0;
+					ilad  <= 0;
+					isto  <= 0;
+					ijmp  <= 0; 
+					ijmpz <= 0;
+					ijpnz <= 0;
 				end
 
-			4'd10:	begin
-				alus  <= 4'bxxxx;
-				inop  <= 0;
-				iadd  <= 0; 
-				isub  <= 0;
-				iand  <= 0; 
-				ior   <= 0;
-				iinc  <= 0;
-				idec  <= 0;
-				inot  <= 0; 
-				ishl  <= 0;
-				imvr  <= 0;
-				imvrd <= 1;
-				ijmp  <= 0; 
-				ijmpz <= 0;
-				ijpnz <= 0;
-				ilad  <= 0;
-				isto  <= 0;
+				4'd9:	begin
+					alus  <= 4'bxxxx;
+					inop  <= 0;
+					iadd  <= 0; 
+					isub  <= 0;
+					iand  <= 0; 
+					ior   <= 0;
+					iinc  <= 0;
+					idec  <= 0;
+					inot  <= 0; 
+					ishl  <= 0;
+					imvr  <= 1;
+					imvrd <= 0;
+					ilad  <= 0;
+					isto  <= 0;
+					ijmp  <= 0; 
+					ijmpz <= 0;
+					ijpnz <= 0;
 				end
 
-			4'd11:	begin
-				alus <= 4'bxxxx;
-				inop  <= 0;
-				iadd  <= 0; 
-				isub  <= 0;
-				iand  <= 0; 
-				ior   <= 0;
-				iinc  <= 0;
-				idec  <= 0;
-				inot  <= 0; 
-				ishl  <= 0;
-				imvr  <= 0;
-				imvrd <= 0;
-				ijmp  <= 1; 
-				ijmpz <= 0;
-				ijpnz <= 0;
-				ilad  <= 0;
-				isto  <= 0;	
+				4'd10:	begin
+					alus  <= 4'bxxxx;
+					inop  <= 0;
+					iadd  <= 0; 
+					isub  <= 0;
+					iand  <= 0; 
+					ior   <= 0;
+					iinc  <= 0;
+					idec  <= 0;
+					inot  <= 0; 
+					ishl  <= 0;
+					imvr  <= 0;
+					imvrd <= 1;
+					ilad  <= 0;
+					isto  <= 0;
+					ijmp  <= 0; 
+					ijmpz <= 0;
+					ijpnz <= 0;
 				end
 
-			4'd12:	begin
-				alus <= 4'bxxxx;
-				inop  <= 0;
-				iadd  <= 0; 
-				isub  <= 0;
-				iand  <= 0; 
-				ior   <= 0;
-				iinc  <= 0;
-				idec  <= 0;
-				inot  <= 0; 
-				ishl  <= 0;
-				imvr  <= 0;
-				imvrd <= 0;
-				ijmp  <= 0; 
-				ijmpz <= 1;
-				ijpnz <= 0;
-				ilad  <= 0;
-				isto  <= 0;	
+				4'd11:	begin
+					alus <= 4'bxxxx;
+					inop  <= 0;
+					iadd  <= 0; 
+					isub  <= 0;
+					iand  <= 0; 
+					ior   <= 0;
+					iinc  <= 0;
+					idec  <= 0;
+					inot  <= 0; 
+					ishl  <= 0;
+					imvr  <= 0;
+					imvrd <= 0;
+					ilad  <= 1;
+					isto  <= 0;
+					ijmp  <= 0; 
+					ijmpz <= 0;
+					ijpnz <= 0;
 				end
 
-			4'd13:	begin
-				alus <= 4'bxxxx;
-				inop  <= 0;
-				iadd  <= 0; 
-				isub  <= 0;
-				iand  <= 0; 
-				ior   <= 0;
-				iinc  <= 0;
-				idec  <= 0;
-				inot  <= 0; 
-				ishl  <= 0;
-				imvr  <= 0;
-				imvrd <= 0;
-				ijmp  <= 0; 
-				ijmpz <= 0;
-				ijpnz <= 1;
-				ilad  <= 0;
-				isto  <= 0;
+				4'd12:	begin
+					alus <= 4'bxxxx;
+					inop  <= 0;
+					iadd  <= 0; 
+					isub  <= 0;
+					iand  <= 0; 
+					ior   <= 0;
+					iinc  <= 0;
+					idec  <= 0;
+					inot  <= 0; 
+					ishl  <= 0;
+					imvr  <= 0;
+					imvrd <= 0;
+					ilad  <= 0;
+					isto  <= 1;
+					ijmp  <= 0; 
+					ijmpz <= 0;
+					ijpnz <= 0;
 				end
 
-			4'd14:	begin
-				alus <= 4'bxxxx;
-				inop  <= 0;
-				iadd  <= 0; 
-				isub  <= 0;
-				iand  <= 0; 
-				ior   <= 0;
-				iinc  <= 0;
-				idec  <= 0;
-				inot  <= 0; 
-				ishl  <= 0;
-				imvr  <= 0;
-				imvrd <= 0;
-				ijmp  <= 0; 
-				ijmpz <= 0;
-				ijpnz <= 0;
-				ilad  <= 1;
-				isto  <= 0;
+				4'd13:	begin
+					alus <= 4'bxxxx;
+					inop  <= 0;
+					iadd  <= 0; 
+					isub  <= 0;
+					iand  <= 0; 
+					ior   <= 0;
+					iinc  <= 0;
+					idec  <= 0;
+					inot  <= 0; 
+					ishl  <= 0;
+					imvr  <= 0;
+					imvrd <= 0;
+					ilad  <= 0;
+					isto  <= 0;
+					ijmp  <= 1; 
+					ijmpz <= 0;
+					ijpnz <= 0;
 				end
 
-			4'd15:	begin
-				alus <= 4'bxxxx;
-				inop  <= 0;
-				iadd  <= 0; 
-				isub  <= 0;
-				iand  <= 0; 
-				ior   <= 0;
-				iinc  <= 0;
-				idec  <= 0;
-				inot  <= 0; 
-				ishl  <= 0;
-				imvr  <= 0;
-				imvrd <= 0;
-				ijmp  <= 0; 
-				ijmpz <= 0;
-				ijpnz <= 0;
-				ilad  <= 0;
-				isto  <= 1;	
+				4'd14:	begin
+					alus <= 4'bxxxx;
+					inop  <= 0;
+					iadd  <= 0; 
+					isub  <= 0;
+					iand  <= 0; 
+					ior   <= 0;
+					iinc  <= 0;
+					idec  <= 0;
+					inot  <= 0; 
+					ishl  <= 0;
+					imvr  <= 0;
+					imvrd <= 0;
+					ilad  <= 0;
+					isto  <= 0;
+					ijmp  <= 0; 
+					ijmpz <= 1;
+					ijpnz <= 0;
 				end
 
+				4'd15:	begin
+					alus <= 4'bxxxx;
+					inop  <= 0;
+					iadd  <= 0; 
+					isub  <= 0;
+					iand  <= 0; 
+					ior   <= 0;
+					iinc  <= 0;
+					idec  <= 0;
+					inot  <= 0; 
+					ishl  <= 0;
+					imvr  <= 0;
+					imvrd <= 0;
+					ilad  <= 0;
+					isto  <= 0;
+					ijmp  <= 0; 
+					ijmpz <= 0;
+					ijpnz <= 1;
+				end
 			endcase
 		end
 	end

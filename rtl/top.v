@@ -33,7 +33,7 @@ module top(clk, rst, A1,SW_choose, SW1, SW2, D, addr, rambus, data, HEX0, HEX1, 
 	wire clk_quick, clk_slow, clk_delay, clk_mem, clk_light;
 	wire[1:0] cpustate;
 	wire[7:0] irout;
-	wire[7:0] rs, rd;//rs和rd在数码管上的输出
+	reg[7:0] rs, rd;//rs和rd在数码管上的输出
 	/*----------分频程序---------------*/
 	//综合用
 	clk_div quick(
@@ -196,103 +196,128 @@ module top(clk, rst, A1,SW_choose, SW1, SW2, D, addr, rambus, data, HEX0, HEX1, 
 
 	//根据irout的高4位对应的指令，再通过irout的第3位和第2位的值给rd赋值，请补充
 	// 例如指令设计了add和sub，irout的高四位分别是0001和0010，则rd可如下赋值，需根据自行设计的指令补充rd的赋值
-	assign rd = ((irout[7:4] == 4'b0001) 
-			|| (irout[7:4] == 4'b0010)
-			|| (irout[7:4] == 4'b0011)
-			|| (irout[7:4] == 4'b0100)
-			|| (irout[7:4] == 4'b0101)
-			|| (irout[7:4] == 4'b0110)
-			|| (irout[7:4] == 4'b0111)
-			|| (irout[7:4] == 4'b1000)
-			|| (irout[7:4] == 4'b1001)
-			|| (irout[7:4] == 4'b1010)
-			|| (irout[7:4] == 4'b1110)
-			) ? 
-			((irout[3:2] == 2'b00) ? r0dbus : 8'bzzzzzzzz)
-			: 8'bzzzzzzzz;
-	assign rd = ((irout[7:4] == 4'b0001) 
-			|| (irout[7:4] == 4'b0010)
-			|| (irout[7:4] == 4'b0011)
-			|| (irout[7:4] == 4'b0100)
-			|| (irout[7:4] == 4'b0101)
-			|| (irout[7:4] == 4'b0110)
-			|| (irout[7:4] == 4'b0111)
-			|| (irout[7:4] == 4'b1000)
-			|| (irout[7:4] == 4'b1001)
-			|| (irout[7:4] == 4'b1010)
-			|| (irout[7:4] == 4'b1110)
-			) ? 
-			((irout[3:2] == 2'b01) ? r1dbus : 8'bzzzzzzzz)
-			: 8'bzzzzzzzz;
-	assign rd = ((irout[7:4] == 4'b0001) 
-			|| (irout[7:4] == 4'b0010)
-			|| (irout[7:4] == 4'b0011)
-			|| (irout[7:4] == 4'b0100)
-			|| (irout[7:4] == 4'b0101)
-			|| (irout[7:4] == 4'b0110)
-			|| (irout[7:4] == 4'b0111)
-			|| (irout[7:4] == 4'b1000)
-			|| (irout[7:4] == 4'b1001)
-			|| (irout[7:4] == 4'b1010)
-			|| (irout[7:4] == 4'b1110)
-			) ? 
-			((irout[3:2] == 2'b10) ? r2dbus : 8'bzzzzzzzz)
-			: 8'bzzzzzzzz;
-	assign rd = ((irout[7:4] == 4'b0001) 
-			|| (irout[7:4] == 4'b0010)
-			|| (irout[7:4] == 4'b0011)
-			|| (irout[7:4] == 4'b0100)
-			|| (irout[7:4] == 4'b0101)
-			|| (irout[7:4] == 4'b0110)
-			|| (irout[7:4] == 4'b0111)
-			|| (irout[7:4] == 4'b1000)
-			|| (irout[7:4] == 4'b1001)
-			|| (irout[7:4] == 4'b1010)
-			|| (irout[7:4] == 4'b1110)
-			) ? 
-			((irout[3:2] == 2'b11) ? r3dbus : 8'bzzzzzzzz)
-			: 8'bzzzzzzzz;
+	// assign rd = ((irout[7:4] == 4'b0001) 
+	// 		|| (irout[7:4] == 4'b0010)
+	// 		|| (irout[7:4] == 4'b0011)
+	// 		|| (irout[7:4] == 4'b0100)
+	// 		|| (irout[7:4] == 4'b0101)
+	// 		|| (irout[7:4] == 4'b0110)
+	// 		|| (irout[7:4] == 4'b0111)
+	// 		|| (irout[7:4] == 4'b1000)
+	// 		|| (irout[7:4] == 4'b1001)
+	// 		|| (irout[7:4] == 4'b1010)
+	// 		|| (irout[7:4] == 4'b1110)
+	// 		) ? 
+	// 		((irout[3:2] == 2'b00) ? r0dbus : 8'bzzzzzzzz)
+	// 		: 8'bzzzzzzzz;
+	// assign rd = ((irout[7:4] == 4'b0001) 
+	// 		|| (irout[7:4] == 4'b0010)
+	// 		|| (irout[7:4] == 4'b0011)
+	// 		|| (irout[7:4] == 4'b0100)
+	// 		|| (irout[7:4] == 4'b0101)
+	// 		|| (irout[7:4] == 4'b0110)
+	// 		|| (irout[7:4] == 4'b0111)
+	// 		|| (irout[7:4] == 4'b1000)
+	// 		|| (irout[7:4] == 4'b1001)
+	// 		|| (irout[7:4] == 4'b1010)
+	// 		|| (irout[7:4] == 4'b1110)
+	// 		) ? 
+	// 		((irout[3:2] == 2'b01) ? r1dbus : 8'bzzzzzzzz)
+	// 		: 8'bzzzzzzzz;
+	// assign rd = ((irout[7:4] == 4'b0001) 
+	// 		|| (irout[7:4] == 4'b0010)
+	// 		|| (irout[7:4] == 4'b0011)
+	// 		|| (irout[7:4] == 4'b0100)
+	// 		|| (irout[7:4] == 4'b0101)
+	// 		|| (irout[7:4] == 4'b0110)
+	// 		|| (irout[7:4] == 4'b0111)
+	// 		|| (irout[7:4] == 4'b1000)
+	// 		|| (irout[7:4] == 4'b1001)
+	// 		|| (irout[7:4] == 4'b1010)
+	// 		|| (irout[7:4] == 4'b1110)
+	// 		) ? 
+	// 		((irout[3:2] == 2'b10) ? r2dbus : 8'bzzzzzzzz)
+	// 		: 8'bzzzzzzzz;
+	// assign rd = ((irout[7:4] == 4'b0001) 
+	// 		|| (irout[7:4] == 4'b0010)
+	// 		|| (irout[7:4] == 4'b0011)
+	// 		|| (irout[7:4] == 4'b0100)
+	// 		|| (irout[7:4] == 4'b0101)
+	// 		|| (irout[7:4] == 4'b0110)
+	// 		|| (irout[7:4] == 4'b0111)
+	// 		|| (irout[7:4] == 4'b1000)
+	// 		|| (irout[7:4] == 4'b1001)
+	// 		|| (irout[7:4] == 4'b1010)
+	// 		|| (irout[7:4] == 4'b1110)
+	// 		) ? 
+	// 		((irout[3:2] == 2'b11) ? r3dbus : 8'bzzzzzzzz)
+	// 		: 8'bzzzzzzzz;
+
+	always@(irout or r0dbus or r1dbus or r2dbus or r3dbus) begin
+		case(irout[7:4])
+			4'b0001, 4'b0010, 4'b0011, 4'b0100, 4'b0101, 4'b0110, 
+			4'b0111, 4'b1000, 4'b1001, 4'b1010, 4'b1011:
+				rd = (irout[3:2] == 2'b00) ? r0dbus :
+					 (irout[3:2] == 2'b01) ? r1dbus :
+					 (irout[3:2] == 2'b10) ? r2dbus :
+					 (irout[3:2] == 2'b11) ? r3dbus : 
+					 8'bzzzzzzzz;
+			default:
+				rd = 8'b00000000;
+		endcase
+	end
 
 
 	//根据irout的高4位对应的指令，再通过irout的第1位和第0位的值给rs赋值，请补充
 	// 例如指令设计了add和sub，irout的高四位分别是0001和0010，则rs可如下赋值，需根据自行设计的指令补充rs的赋值
-	assign rs = ((irout[7:4] == 4'b0001) 
-			|| (irout[7:4] == 4'b0010)
-			|| (irout[7:4] == 4'b0011)
-			|| (irout[7:4] == 4'b0100)
-			|| (irout[7:4] == 4'b1001)
-			|| (irout[7:4] == 4'b1111)
-			) ? 
-			((irout[1:0] == 2'b00) ? r0dbus : 8'bzzzzzzzz)
-			: 8'bzzzzzzzz;
-	assign rs = ((irout[7:4] == 4'b0001) 
-			|| (irout[7:4] == 4'b0010)
-			|| (irout[7:4] == 4'b0011)
-			|| (irout[7:4] == 4'b0100)
-			|| (irout[7:4] == 4'b1001)
-			|| (irout[7:4] == 4'b1111)
-			) ? 
-			((irout[1:0] == 2'b01) ? r1dbus : 8'bzzzzzzzz)
-			: 8'bzzzzzzzz;
-	assign rs = ((irout[7:4] == 4'b0001) 
-			|| (irout[7:4] == 4'b0010)
-			|| (irout[7:4] == 4'b0011)
-			|| (irout[7:4] == 4'b0100)
-			|| (irout[7:4] == 4'b1001)
-			|| (irout[7:4] == 4'b1111)
-			) ? 
-			((irout[1:0] == 2'b10) ? r2dbus : 8'bzzzzzzzz)
-			: 8'bzzzzzzzz;
-	assign rs = ((irout[7:4] == 4'b0001) 
-			|| (irout[7:4] == 4'b0010)
-			|| (irout[7:4] == 4'b0011)
-			|| (irout[7:4] == 4'b0100)
-			|| (irout[7:4] == 4'b1001)
-			|| (irout[7:4] == 4'b1111)
-			) ? 
-			((irout[1:0] == 2'b11) ? r3dbus : 8'bzzzzzzzz)
-			: 8'bzzzzzzzz;
-
+	// assign rs = ((irout[7:4] == 4'b0001) 
+	// 		|| (irout[7:4] == 4'b0010)
+	// 		|| (irout[7:4] == 4'b0011)
+	// 		|| (irout[7:4] == 4'b0100)
+	// 		|| (irout[7:4] == 4'b1001)
+	// 		|| (irout[7:4] == 4'b1111)
+	// 		) ? 
+	// 		((irout[1:0] == 2'b00) ? r0dbus : 8'bzzzzzzzz)
+	// 		: 8'bzzzzzzzz;
+	// assign rs = ((irout[7:4] == 4'b0001) 
+	// 		|| (irout[7:4] == 4'b0010)
+	// 		|| (irout[7:4] == 4'b0011)
+	// 		|| (irout[7:4] == 4'b0100)
+	// 		|| (irout[7:4] == 4'b1001)
+	// 		|| (irout[7:4] == 4'b1111)
+	// 		) ? 
+	// 		((irout[1:0] == 2'b01) ? r1dbus : 8'bzzzzzzzz)
+	// 		: 8'bzzzzzzzz;
+	// assign rs = ((irout[7:4] == 4'b0001) 
+	// 		|| (irout[7:4] == 4'b0010)
+	// 		|| (irout[7:4] == 4'b0011)
+	// 		|| (irout[7:4] == 4'b0100)
+	// 		|| (irout[7:4] == 4'b1001)
+	// 		|| (irout[7:4] == 4'b1111)
+	// 		) ? 
+	// 		((irout[1:0] == 2'b10) ? r2dbus : 8'bzzzzzzzz)
+	// 		: 8'bzzzzzzzz;
+	// assign rs = ((irout[7:4] == 4'b0001) 
+	// 		|| (irout[7:4] == 4'b0010)
+	// 		|| (irout[7:4] == 4'b0011)
+	// 		|| (irout[7:4] == 4'b0100)
+	// 		|| (irout[7:4] == 4'b1001)
+	// 		|| (irout[7:4] == 4'b1111)
+	// 		) ? 
+	// 		((irout[1:0] == 2'b11) ? r3dbus : 8'bzzzzzzzz)
+	// 		: 8'bzzzzzzzz;
+	always@(irout or r0dbus or r1dbus or r2dbus or r3dbus) begin
+		case(irout[7:4])
+			4'b0001, 4'b0010, 4'b0011, 4'b0100, 4'b1001, 4'b1100:
+				rs = (irout[1:0] == 2'b00) ? r0dbus :
+					 (irout[1:0] == 2'b01) ? r1dbus :
+					 (irout[1:0] == 2'b10) ? r2dbus :
+					 (irout[1:0] == 2'b11) ? r3dbus :
+					 8'bzzzzzzzz;
+			default:
+				rs = 8'b00000000;
+		endcase
+	end
 
 	light_show show(
 		.light_clk		(clk_light),

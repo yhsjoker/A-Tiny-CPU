@@ -4,7 +4,7 @@
 ; Hierarchy     ; Input ; Constant Input ; Unused Input ; Floating Input ; Output ; Constant Output ; Unused Output ; Floating Output ; Bidir ; Constant Bidir ; Unused Bidir ; Input only Bidir ; Output only Bidir ;
 +---------------+-------+----------------+--------------+----------------+--------+-----------------+---------------+-----------------+-------+----------------+--------------+------------------+-------------------+
 ; show          ; 58    ; 7              ; 0            ; 7              ; 80     ; 7               ; 7             ; 7               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
-; mm            ; 39    ; 0              ; 1            ; 0              ; 16     ; 0               ; 0             ; 0               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
+; mm            ; 39    ; 0              ; 0            ; 0              ; 16     ; 0               ; 0             ; 0               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
 ; mcpu|mcontrol ; 13    ; 0              ; 0            ; 0              ; 32     ; 0               ; 0             ; 0               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
 ; mcpu|mz       ; 11    ; 7              ; 0            ; 7              ; 8      ; 7               ; 7             ; 7               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
 ; mcpu|malu     ; 20    ; 0              ; 0            ; 0              ; 8      ; 0               ; 0             ; 0               ; 0     ; 0              ; 0            ; 0                ; 0                 ;
