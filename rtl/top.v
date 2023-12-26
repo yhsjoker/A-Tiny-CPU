@@ -9,7 +9,7 @@ module top(clk, rst, A1,SW_choose, SW1, SW2, D, addr, rambus, data, HEX0, HEX1, 
 		);	
 	input clk, rst;
 	input A1;
-	input SW_choose, SW1,SW2;
+	input SW_choose, SW1, SW2;
 	input[7:0] D;
 	output[15:0] addr;
 	output[7:0] rambus;
@@ -31,53 +31,82 @@ module top(clk, rst, A1,SW_choose, SW1, SW2, D, addr, rambus, data, HEX0, HEX1, 
 		r1load, r0load, r2load, r3load, xload, yload, zload, pcbus, drhbus,
 		drlbus, trbus, r1bus, r0bus, r2bus, r3bus, ybus, membus, busmem, clr;
 	wire clk_quick, clk_slow, clk_delay, clk_mem, clk_light;
-	wire [1:0] cpustate;
-	wire [7:0] irout;
-	wire [7:0] rs, rd;//rs和rd在数码管上的输出
+	wire[1:0] cpustate;
+	wire[7:0] irout;
+	wire[7:0] rs, rd;//rs和rd在数码管上的输出
 	/*----------分频程序---------------*/
 	//综合用
-	/*clk_div quick(.clk(clk),.reset(rst),.symbol(32'd16384000),.div_clk(clk_quick));
-	clk_div slow(.clk(clk),.reset(rst),.symbol(32'd49152000),.div_clk(clk_slow));
-	clk_div delay(.clk(clk),.reset(rst),.symbol(32'd2048000),.div_clk(clk_delay));
-	clk_div mem(.clk(clk),.reset(rst),.symbol(32'd2048000),.div_clk(clk_mem));
-	clk_div light(.clk(clk),.reset(rst),.symbol(32'd2048000),.div_clk(clk_light));*/
-	//仿真用
-
-
 	clk_div quick(
 		.clk		(clk),
 		.reset		(rst),
-		.symbol		(32'd3),
+		.symbol		(32'd16384000),
 		.div_clk	(clk_quick)
 		);
 
 	clk_div slow(
 		.clk		(clk),
 		.reset		(rst),
-		.symbol		(32'd6),
+		.symbol		(32'd49152000),
 		.div_clk	(clk_slow)
 		);
 
 	clk_div delay(
-		.clk		(clk),
+		.clk		(clk),		
 		.reset		(rst),
-		.symbol		(32'd1),
+		.symbol		(32'd2048000),
 		.div_clk	(clk_delay)
 		);
 
 	clk_div mem(
 		.clk		(clk),
 		.reset		(rst),
-		.symbol		(32'd3),
+		.symbol		(32'd2048000),
 		.div_clk	(clk_mem)
 		);
 
 	clk_div light(
 		.clk		(clk),
 		.reset		(rst),
-		.symbol		(32'd3),
+		.symbol		(32'd2048000),
 		.div_clk	(clk_light)
 		);
+
+
+	//仿真用
+	// clk_div quick(
+	// 	.clk		(clk),
+	// 	.reset		(rst),
+	// 	.symbol		(32'd3),
+	// 	.div_clk	(clk_quick)
+	// 	);
+
+	// clk_div slow(
+	// 	.clk		(clk),
+	// 	.reset		(rst),
+	// 	.symbol		(32'd6),
+	// 	.div_clk	(clk_slow)
+	// 	);
+
+	// clk_div delay(
+	// 	.clk		(clk),
+	// 	.reset		(rst),
+	// 	.symbol		(32'd1),
+	// 	.div_clk	(clk_delay)
+	// 	);
+
+	// clk_div mem(
+	// 	.clk		(clk),
+	// 	.reset		(rst),
+	// 	.symbol		(32'd3),
+	// 	.div_clk	(clk_mem)
+	// 	);
+
+	// clk_div light(
+	// 	.clk		(clk),
+	// 	.reset		(rst),
+	// 	.symbol		(32'd3),
+	// 	.div_clk	(clk_light)
+	// 	);
 
 	/*-------------------------------*/
 
@@ -166,23 +195,103 @@ module top(clk, rst, A1,SW_choose, SW1, SW2, D, addr, rambus, data, HEX0, HEX1, 
 	);
 
 	//根据irout的高4位对应的指令，再通过irout的第3位和第2位的值给rd赋值，请补充
-	/*例如指令设计了add和sub，irout的高四位分别是0001和0010，则rd可如下赋值，需根据自行设计的指令补充rd的赋值
-	assign rd=((irout[7:4]==4'b0001) || (irout[7:4]==4'b0010))?((irout[3:2]==2'b00)?r0dbus:8'bzzzzzzzz):8'bzzzzzzzz;
-	assign rd=((irout[7:4]==4'b0001) || (irout[7:4]==4'b0010))?((irout[3:2]==2'b01)?r1dbus:8'bzzzzzzzz):8'bzzzzzzzz;
-	assign rd=((irout[7:4]==4'b0001) || (irout[7:4]==4'b0010))?((irout[3:2]==2'b10)?r2dbus:8'bzzzzzzzz):8'bzzzzzzzz;
-	assign rd=((irout[7:4]==4'b0001) || (irout[7:4]==4'b0010))?((irout[3:2]==2'b11)?r3dbus:8'bzzzzzzzz):8'bzzzzzzzz;*/
-
-
+	// 例如指令设计了add和sub，irout的高四位分别是0001和0010，则rd可如下赋值，需根据自行设计的指令补充rd的赋值
+	assign rd = ((irout[7:4] == 4'b0001) 
+			|| (irout[7:4] == 4'b0010)
+			|| (irout[7:4] == 4'b0011)
+			|| (irout[7:4] == 4'b0100)
+			|| (irout[7:4] == 4'b0101)
+			|| (irout[7:4] == 4'b0110)
+			|| (irout[7:4] == 4'b0111)
+			|| (irout[7:4] == 4'b1000)
+			|| (irout[7:4] == 4'b1001)
+			|| (irout[7:4] == 4'b1010)
+			|| (irout[7:4] == 4'b1110)
+			) ? 
+			((irout[3:2] == 2'b00) ? r0dbus : 8'bzzzzzzzz)
+			: 8'bzzzzzzzz;
+	assign rd = ((irout[7:4] == 4'b0001) 
+			|| (irout[7:4] == 4'b0010)
+			|| (irout[7:4] == 4'b0011)
+			|| (irout[7:4] == 4'b0100)
+			|| (irout[7:4] == 4'b0101)
+			|| (irout[7:4] == 4'b0110)
+			|| (irout[7:4] == 4'b0111)
+			|| (irout[7:4] == 4'b1000)
+			|| (irout[7:4] == 4'b1001)
+			|| (irout[7:4] == 4'b1010)
+			|| (irout[7:4] == 4'b1110)
+			) ? 
+			((irout[3:2] == 2'b01) ? r1dbus : 8'bzzzzzzzz)
+			: 8'bzzzzzzzz;
+	assign rd = ((irout[7:4] == 4'b0001) 
+			|| (irout[7:4] == 4'b0010)
+			|| (irout[7:4] == 4'b0011)
+			|| (irout[7:4] == 4'b0100)
+			|| (irout[7:4] == 4'b0101)
+			|| (irout[7:4] == 4'b0110)
+			|| (irout[7:4] == 4'b0111)
+			|| (irout[7:4] == 4'b1000)
+			|| (irout[7:4] == 4'b1001)
+			|| (irout[7:4] == 4'b1010)
+			|| (irout[7:4] == 4'b1110)
+			) ? 
+			((irout[3:2] == 2'b10) ? r2dbus : 8'bzzzzzzzz)
+			: 8'bzzzzzzzz;
+	assign rd = ((irout[7:4] == 4'b0001) 
+			|| (irout[7:4] == 4'b0010)
+			|| (irout[7:4] == 4'b0011)
+			|| (irout[7:4] == 4'b0100)
+			|| (irout[7:4] == 4'b0101)
+			|| (irout[7:4] == 4'b0110)
+			|| (irout[7:4] == 4'b0111)
+			|| (irout[7:4] == 4'b1000)
+			|| (irout[7:4] == 4'b1001)
+			|| (irout[7:4] == 4'b1010)
+			|| (irout[7:4] == 4'b1110)
+			) ? 
+			((irout[3:2] == 2'b11) ? r3dbus : 8'bzzzzzzzz)
+			: 8'bzzzzzzzz;
 
 
 	//根据irout的高4位对应的指令，再通过irout的第1位和第0位的值给rs赋值，请补充
-	/*例如指令设计了add和sub，irout的高四位分别是0001和0010，则rs可如下赋值，需根据自行设计的指令补充rs的赋值
-	assign rs=((irout[7:4]==4'b0001) || (irout[7:4]==4'b0010))?((irout[1:0]==2'b00)?r0dbus:8'bzzzzzzzz):8'bzzzzzzzz;
-	assign rs=((irout[7:4]==4'b0001) || (irout[7:4]==4'b0010))?((irout[1:0]==2'b01)?r1dbus:8'bzzzzzzzz):8'bzzzzzzzz;
-	assign rs=((irout[7:4]==4'b0001) || (irout[7:4]==4'b0010))?((irout[1:0]==2'b10)?r2dbus:8'bzzzzzzzz):8'bzzzzzzzz;
-	assign rs=((irout[7:4]==4'b0001) || (irout[7:4]==4'b0010))?((irout[1:0]==2'b11)?r3dbus:8'bzzzzzzzz):8'bzzzzzzzz;*/
-
-
+	// 例如指令设计了add和sub，irout的高四位分别是0001和0010，则rs可如下赋值，需根据自行设计的指令补充rs的赋值
+	assign rs = ((irout[7:4] == 4'b0001) 
+			|| (irout[7:4] == 4'b0010)
+			|| (irout[7:4] == 4'b0011)
+			|| (irout[7:4] == 4'b0100)
+			|| (irout[7:4] == 4'b1001)
+			|| (irout[7:4] == 4'b1111)
+			) ? 
+			((irout[1:0] == 2'b00) ? r0dbus : 8'bzzzzzzzz)
+			: 8'bzzzzzzzz;
+	assign rs = ((irout[7:4] == 4'b0001) 
+			|| (irout[7:4] == 4'b0010)
+			|| (irout[7:4] == 4'b0011)
+			|| (irout[7:4] == 4'b0100)
+			|| (irout[7:4] == 4'b1001)
+			|| (irout[7:4] == 4'b1111)
+			) ? 
+			((irout[1:0] == 2'b01) ? r1dbus : 8'bzzzzzzzz)
+			: 8'bzzzzzzzz;
+	assign rs = ((irout[7:4] == 4'b0001) 
+			|| (irout[7:4] == 4'b0010)
+			|| (irout[7:4] == 4'b0011)
+			|| (irout[7:4] == 4'b0100)
+			|| (irout[7:4] == 4'b1001)
+			|| (irout[7:4] == 4'b1111)
+			) ? 
+			((irout[1:0] == 2'b10) ? r2dbus : 8'bzzzzzzzz)
+			: 8'bzzzzzzzz;
+	assign rs = ((irout[7:4] == 4'b0001) 
+			|| (irout[7:4] == 4'b0010)
+			|| (irout[7:4] == 4'b0011)
+			|| (irout[7:4] == 4'b0100)
+			|| (irout[7:4] == 4'b1001)
+			|| (irout[7:4] == 4'b1111)
+			) ? 
+			((irout[1:0] == 2'b11) ? r3dbus : 8'bzzzzzzzz)
+			: 8'bzzzzzzzz;
 
 
 	light_show show(
