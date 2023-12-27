@@ -308,16 +308,23 @@ module top(clk, rst, A1,SW_choose, SW1, SW2, D, addr, rambus, data, HEX0, HEX1, 
 	// 		: 8'bzzzzzzzz;
 	always@(irout or r0dbus or r1dbus or r2dbus or r3dbus) begin
 		case(irout[7:4])
-			4'b0001, 4'b0010, 4'b0011, 4'b0100, 4'b1001, 4'b1100:
+			4'b0001, 4'b0010, 4'b0011, 4'b0100, 4'b1001:
 				rs = (irout[1:0] == 2'b00) ? r0dbus :
 					 (irout[1:0] == 2'b01) ? r1dbus :
 					 (irout[1:0] == 2'b10) ? r2dbus :
 					 (irout[1:0] == 2'b11) ? r3dbus :
 					 8'bzzzzzzzz;
+			4'b1100:
+				rs = (irout[3:2] == 2'b00) ? r0dbus : 
+					(irout[3:2] == 2'b01) ? r1dbus : 
+					(irout[3:2] == 2'b10) ? r2dbus : 
+					(irout[3:2] == 2'b11) ? r3dbus : 
+					8'bzzzzzzzz;
 			default:
 				rs = 8'b00000000;
 		endcase
 	end
+
 
 	light_show show(
 		.light_clk		(clk_light),
